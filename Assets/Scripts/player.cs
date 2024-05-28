@@ -29,7 +29,7 @@ public class player : MonoBehaviour
 
 
     Rigidbody2D rb;
-    // Start is called before the first frame update
+
     void Start()
     {
         fadeSlider.maxValue = fadeLimit;
@@ -39,7 +39,6 @@ public class player : MonoBehaviour
         jump = 42;
     }
 
-    // Update is called once per frame
     void Update()
     {
         fadeSlider.value = fadeProcess;
@@ -54,13 +53,16 @@ public class player : MonoBehaviour
         if(fadeProcess >= fadeLimit)
         {
             sr.sprite = fade2;
+            //massを増加し、車を押すことができる
+            rb.mass = 5f;
             fadeProcess = 0f;
         }
 
         if (Input.GetButton("Jump") && canJump)
         {
             canJump = false;
-            rb.AddForce(new Vector2 (rb.velocity.x,jump * 10));
+            //ジャンプの高さを維持するため、mass掛け算
+            rb.AddForce(new Vector2 (rb.velocity.x,jump * 10 * rb.mass));
             StartCoroutine(resetJumpCD());
         }
 
