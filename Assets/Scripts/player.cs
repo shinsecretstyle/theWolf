@@ -112,4 +112,12 @@ public class player : MonoBehaviour
             isInLight = false;
         }
     }
+
+    public void checkLight(bool inLight)
+    {
+        if(inLight)
+        {
+            isInLight = true;
+        }else isInLight = false;
+    }
 }
