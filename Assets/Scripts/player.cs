@@ -66,6 +66,19 @@ public class player : MonoBehaviour
             StartCoroutine(resetJumpCD());
         }
 
+        //RaycastHit2D hit1 = Physics2D.Raycast(headLeft.transform.position,moon.transform.position - transform.position,Mathf.Infinity);
+        //RaycastHit2D hit2 = Physics2D.Raycast(headRight.transform.position, moon.transform.position - transform.position, Mathf.Infinity);
+        //RaycastHit2D hit3 = Physics2D.Raycast(footLeft.transform.position, moon.transform.position - transform.position, Mathf.Infinity);
+        //RaycastHit2D hit4 = Physics2D.Raycast(footRight.transform.position, moon.transform.position - transform.position, Mathf.Infinity);
+
+        //if ((hit1.collider != null && hit1.collider.CompareTag("Moon")) 
+        //    || (hit2.collider != null && hit2.collider.CompareTag("Moon"))
+        //    || (hit3.collider != null && hit3.collider.CompareTag("Moon"))
+        //    || (hit4.collider != null && hit4.collider.CompareTag("Moon")))
+        //{
+        //    isInLight = true;
+        //}else isInLight = false;
+
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -79,6 +92,12 @@ public class player : MonoBehaviour
         canJump = true;
     }
 
+    //private void OnDrawGizmos()
+    //{
+    //    Gizmos.color = Color.red;
+    //    Vector3 direction = (moon.transform.position - headLeft.transform.position).normalized;
+    //    Gizmos.DrawRay(headLeft.transform.position, direction * 100);
+    //}
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "Moon")
