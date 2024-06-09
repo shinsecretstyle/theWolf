@@ -29,6 +29,8 @@ public class player : MonoBehaviour
 
 
     Rigidbody2D rb;
+  
+
 
     void Start()
     {
@@ -43,7 +45,10 @@ public class player : MonoBehaviour
     {
         fadeSlider.value = fadeProcess;
         move = Input.GetAxis("Horizontal");
+        float y = Input.GetAxisRaw("Vertical");
         rb.velocity = new Vector2(move * speed,rb.velocity.y);
+        //rb.velocity = new Vector2(rb.velocity.x,y*2);
+    
 
         if(isInLight)
         {
@@ -73,6 +78,7 @@ public class player : MonoBehaviour
             rb.velocity = Vector2.zero;
         }
     }
+    
     IEnumerator resetJumpCD()
     {
         yield return new WaitForSeconds(jumpCD);
