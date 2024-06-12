@@ -9,16 +9,22 @@ public class player : MonoBehaviour
 {
     [SerializeField]
     private int phaseID;
+    private float phaseUpSpeed = 0.8f;
+    private float phaseDownSpeed = 0.2f;
 
     public float speed;
     public float jumpPower;
     public float jumpCD = 1f;
-    float move;
     public float phaseLimit = 5f;
     public float phaseProcess = 0f;
     public bool canJump = true;
-    //public LayerMask lightDectect;
     public bool isInLight;
+    public bool isOnGround;
+    public bool isOnWall;
+
+    [SerializeField]
+    private bool canWallJump;
+
     public Slider phaseSlider;
     public Sprite phase1;
     public Sprite phase2;
@@ -42,18 +48,13 @@ public class player : MonoBehaviour
     void Update()
     {
         phaseSlider.value = phaseProcess;
-        move = Input.GetAxis("Horizontal");
+        float move = Input.GetAxis("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
         rb.velocity = new Vector2(move * speed,rb.velocity.y);
+
         //rb.velocity = new Vector2(rb.velocity.x,y*2);
 
-        if (Input.GetButton("Jump") && canJump)
-        {
-            canJump = false;
-            //ジャンプの高さを維持するため、mass掛け算
-            rb.AddForce(new Vector2 (rb.velocity.x,jumpPower * 10 * rb.mass));
-            StartCoroutine(resetJumpCD());
-        }
+        JumpEvent();
 
         inTheLight();
     }
@@ -68,6 +69,7 @@ public class player : MonoBehaviour
             updateCollider();
             speed = 4;
             rb.mass = 1;
+            canWallJump = false;
         }
         else if(id == 2)//phase2
         {
@@ -75,6 +77,7 @@ public class player : MonoBehaviour
             sr.sprite = phase2;
             updateCollider();
             rb.mass = 1;
+            canWallJump = true;
         }
         else if(id == 3)//phase3
         {
@@ -82,6 +85,7 @@ public class player : MonoBehaviour
             updateCollider();
             //massを増加し、車を押すことができる
             rb.mass = 5f;
+            canWallJump = false;
         }
         else if(id == 4)//phase4
         {
@@ -108,11 +112,11 @@ public class player : MonoBehaviour
     {
         if (isInLight)
         {
-            phaseProcess += Time.deltaTime * 0.8f;
+            phaseProcess += Time.deltaTime * phaseUpSpeed;//フェーズの増加スピード掛け算
         }
         else if (!isInLight && phaseProcess > 0f)
         {
-            phaseProcess -= Time.deltaTime * 0.2f;
+            phaseProcess -= Time.deltaTime * phaseDownSpeed;//フェーズの減少スピード掛け算
         }
 
         if (phaseProcess >= phaseLimit && phaseID < 4)
@@ -133,18 +137,46 @@ public class player : MonoBehaviour
 
     }
 
-    private void Jump()
+    private void JumpEvent()
     {
+        if (Input.GetButton("Jump") && canJump)
+        {
+            canJump = false;
+            //ジャンプの高さを維持するため、mass掛け算
+            rb.AddForce(new Vector2(rb.velocity.x, jumpPower * 10 * rb.mass));
+            StartCoroutine(resetJumpCD());
+        }
+
+
+        if (isOnGround)
+        {
+            canJump = true;
+            StopCoroutine(resetJumpCD());
+        }else if(canWallJump && isOnWall)
+        {
+            canJump = true;
+            StopCoroutine(resetJumpCD());
+        }
+
 
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag("Ground")) {
             rb.velocity = Vector2.zero;
-            canJump = true;
+            //canJump = true;
         }
     }
+
+    public void checkGround(bool isground)
+    {
+        isOnGround = isground;
+    }
     
+    public void checkWall(bool isWall)
+    {
+        isOnWall = isWall;
+    }
     IEnumerator resetJumpCD()
     {
         yield return new WaitForSeconds(jumpCD);
