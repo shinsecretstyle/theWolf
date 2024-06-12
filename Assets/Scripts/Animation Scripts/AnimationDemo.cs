@@ -1,11 +1,11 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.U2D;
 using UnityEngine.UI;
 
-public class player : MonoBehaviour
+public class AnimationDemo : MonoBehaviour
 {
     [SerializeField]
     private int phaseID;
@@ -33,6 +33,7 @@ public class player : MonoBehaviour
     SpriteRenderer sr;
     Rigidbody2D rb;
     PolygonCollider2D polygonCollider;
+    private Animator anim;
 
     void Start()
     {
@@ -42,7 +43,8 @@ public class player : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         polygonCollider = GetComponent<PolygonCollider2D>();
         speed = 4;
-        jumpPower = 41;
+        jumpPower = 42;
+        this.anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -51,6 +53,10 @@ public class player : MonoBehaviour
         float move = Input.GetAxis("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
         rb.velocity = new Vector2(move * speed,rb.velocity.y);
+
+        //idleとwalkの切り替え。スピードが0の時idle。0.5以上の場合walk
+        anim.SetFloat("Speed",Mathf.Abs(move*speed));
+
 
         //rb.velocity = new Vector2(rb.velocity.x,y*2);
 
@@ -145,6 +151,8 @@ public class player : MonoBehaviour
         if (Input.GetButton("Jump") && canJump)
         {
             canJump = false;
+            //ジャンプした時にジャンプアニメーションを再生
+            anim.SetBool("Jump",true);
             //ジャンプの高さを維持するため、mass掛け算
             rb.AddForce(new Vector2(rb.velocity.x, jumpPower * 10 * rb.mass));
             StartCoroutine(resetJumpCD());
@@ -154,6 +162,8 @@ public class player : MonoBehaviour
         if (isOnGround)
         {
             canJump = true;
+            //地面についているときジャンプアニメーションを再生しないようにする
+            anim.SetBool("Jump",false);
             StopCoroutine(resetJumpCD());
         }else if(canWallJump && isOnWall)
         {
