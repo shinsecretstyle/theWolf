@@ -24,12 +24,14 @@ public class player : MonoBehaviour
 
     [SerializeField]
     private bool canWallJump;
+    
 
     public Slider phaseSlider;
     public Sprite phase1;
     public Sprite phase2;
     public Sprite phase3;
     public Sprite phase4;
+    public GameObject groundChecker;
     SpriteRenderer sr;
     Rigidbody2D rb;
     PolygonCollider2D polygonCollider;
@@ -140,10 +142,18 @@ public class player : MonoBehaviour
 
     }
 
+    IEnumerator resetGroundChecker()
+    {
+        groundChecker.SetActive(false);
+        yield return new WaitForSeconds(0.3f);
+        groundChecker.SetActive(true);
+    }
+
     private void JumpEvent()
     {
         if (Input.GetButton("Jump") && canJump)
         {
+            StartCoroutine(resetGroundChecker());
             canJump = false;
             //ジャンプの高さを維持するため、mass掛け算
             rb.AddForce(new Vector2(rb.velocity.x, jumpPower * 10 * rb.mass));
