@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class GroundChecker : MonoBehaviour
 {
+    public int phaseId;
     player player;
+    
     private void Start()
     {
         player = GetComponentInParent<player>();
@@ -12,7 +14,7 @@ public class GroundChecker : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.CompareTag("Ground") && player.phaseProcess == phaseId)
         {
             player.checkGround(true);
             Debug.Log("ground enter");
@@ -21,7 +23,7 @@ public class GroundChecker : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.CompareTag("Ground") && player.phaseProcess == phaseId)
         {
             player.checkGround(false);
             Debug.Log("ground exit");
