@@ -40,6 +40,7 @@ public class LadderMovement : MonoBehaviour
         if (collision.CompareTag("Ladder"))
         {
             isLadder = true;
+            Debug.Log("Ladder");
         }
     }
 

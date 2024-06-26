@@ -12,26 +12,26 @@ public class NewBehaciourScript : MonoBehaviour
 
     void Start()
     {
-        //Component‚ğæ“¾
+        //Componentï¿½ï¿½ï¿½æ“¾
         audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
     {
-        // ¶
+        // ï¿½ï¿½
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            //‰¹(sound1)‚ğ–Â‚ç‚·
+            //ï¿½ï¿½(sound1)ï¿½ï¿½Â‚ç‚·
             audioSource.PlayOneShot(sound1);
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
-            //‰¹(sound2)‚ğ–Â‚ç‚·
+            //ï¿½ï¿½(sound2)ï¿½ï¿½Â‚ç‚·
             audioSource.PlayOneShot(sound2);
         }
         if (Input.GetKey(KeyCode.Space))
         {
-            //‰¹(sound1)‚ğ–Â‚ç‚·
+            //ï¿½ï¿½(sound1)ï¿½ï¿½Â‚ç‚·
             audioSource.PlayOneShot(sound3);
         }
     }
