@@ -8,17 +8,19 @@ public class Switch : MonoBehaviour
 
     public DoorScripts door;
 
-
-
     private void OnTriggerEnter2D(Collider2D other)
     {
+
+      
         if (!active && other.CompareTag("Player"))
         //スイッチに触れているとき
         {
             door.isOpen = true;
             enabled = false;
             Debug.Log("Switch enter");
+           
         }
+
     }
     private void OnTriggerExit2D(Collider2D other)
     //スイッチに触れていないとき

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaciourScript : MonoBehaviour
+public class BGMdemo : MonoBehaviour
 {
 
     public AudioClip sound1;
@@ -31,7 +31,7 @@ public class NewBehaciourScript : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.Space))
         {
-            //��(sound1)��炷
+            //��(sound3)��炷
             audioSource.PlayOneShot(sound3);
         }
     }
