@@ -20,20 +20,6 @@ public class BGMSE : MonoBehaviour
     void Update()
     {
         // ¶
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            //‰¹(sound1)‚ğ–Â‚ç‚·
-            GetComponents<AudioSource>()[0].Play();
-        }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            //‰¹(sound3)‚ğ–Â‚ç‚·
-            GetComponents<AudioSource>()[1].Play();
-        }
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            //‰¹(sound2)‚ğ–Â‚ç‚·
-            GetComponents<AudioSource>()[2].Play();
-        }
+        
     }
 }
