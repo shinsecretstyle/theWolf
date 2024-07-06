@@ -7,7 +7,6 @@ TagManager:
   - Ground
   - Moon
   - Ladder
-  - Switch
   layers:
   - Default
   - TransparentFX
