@@ -20,7 +20,7 @@ public class Title : MonoBehaviour
             Debug.Log("Go Next Scense!");
 
             //‚±‚±‚ÉŸ‚ÌƒV[ƒ“‚Ös‚­–½—ß‚ğ‘‚­
-            SceneManager.LoadScene("BGMdemo");
+            SceneManager.LoadScene("wolf map");
             //
             firstPush = true;
         }

@@ -1,0 +1,1346 @@
+fileFormatVersion: 2
+guid: 33d55dc6a3fd16f469b6d566f10224c1
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 850
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08cda81b702be70408846275d44cf0cd
+      internalID: -2108580654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 850
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86c906b10c18da449b5a3a0e661ef28c
+      internalID: -1707889157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 850
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 381432ffd0d9c4245aef1697ab4eb971
+      internalID: -1310230047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 850
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fadd0b2a16d5b642810e61689936ae2
+      internalID: 538756171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_4
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 850
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1796e6196511df846bba8af346b2c68a
+      internalID: 501786721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_5
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 850
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b446a788973e4514b85b551ad8a4695b
+      internalID: 2108889020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_6
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 850
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fb85faa68e258544aa434266d00d282
+      internalID: 949788233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_7
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 850
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87c6bc3a7610f6347b6928b6df23b0b7
+      internalID: 595762313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 722
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c938dffbd9a54a4cad129b43eae9f22
+      internalID: 1065793385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_9
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 722
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f7c966e25b488f49844ac3dd60349bd
+      internalID: -1431723441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_10
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 722
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9882564dc74b0a4aac64beed814c687
+      internalID: -837243059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_11
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 722
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9abd19ba22247349a07f41cb530da1b
+      internalID: 1692971424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_12
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 722
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f730efe389b2cd4297c8a5275f54f0a
+      internalID: 953991983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_13
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 722
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e62ae1ac9fe6724c9d82ac8a255f987
+      internalID: -874075315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_14
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 722
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e8e43e0fa6393d4994d64f2fa05bbdc
+      internalID: -1651061556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_15
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 722
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0998bdf27210a4418eeee8f24f4d2a3
+      internalID: 200360255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 594
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4eb0fbfcd264dab41b003aba325a2a40
+      internalID: 875170663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_17
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 594
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1777ef1e33ac354e8951eba1ddfedaa
+      internalID: 1328791498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_18
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 594
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 978532fe0dc2e014a80a6bf0126e65e0
+      internalID: 859056926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_19
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 594
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff8a1ed7336403b4eb8085570e8a0bcb
+      internalID: 1665481990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_20
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 594
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0369408913a6f27479101e12692ab085
+      internalID: 1226005508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_21
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 594
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d549ecae3623f5642bf3c9a66f7951b7
+      internalID: -154720170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_22
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 594
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 115c4d53625818947962036bc08c59f2
+      internalID: 541782020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_23
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 594
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bc4c707b8379cf4eb26aa9ab2465740
+      internalID: -2037462549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 466
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bfa31bb536391444b236dfdfa9e921c
+      internalID: 1198366580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_25
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 466
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74035995c03a0b84d86647502bc80bec
+      internalID: -1865187236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_26
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 466
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d008fd07f29e3704dbe229d6ea7f8d76
+      internalID: -354278535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_27
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 466
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 491b03cbab1d938439afd69c87b5fd87
+      internalID: 992484041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_28
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 466
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 382d3c86a52319849905ef3e18906bd5
+      internalID: -113543487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_29
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 466
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afb801f4f574f20449b98cfeab04859b
+      internalID: -773158077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_30
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 466
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45056edbe899a0a42b1d323cea4aa56d
+      internalID: 697376158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_31
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 466
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbcc3d77c691e114b8144a8a0627043c
+      internalID: -1316829800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 338
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2ed6d67d0bd97b4f8bec60b0205c7be
+      internalID: -1683010159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_33
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 338
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15e2fd825877282448ae067a1ad86d8d
+      internalID: 588617517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_34
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 338
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3591c0eac54f564ca7821c1a513163d
+      internalID: 297500579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_35
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 338
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c11a2cf4b4e965469a56e7cee6260c4
+      internalID: -502153679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_36
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 338
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8617984193c57c64f9c1bed981c7476c
+      internalID: 906145826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_37
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 338
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27c5199ceaa264d4485da0229f8ca5e6
+      internalID: 1341617065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_38
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 338
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bbc03c2d7a6d1244ab3835ca7f9fb0c
+      internalID: -1905725993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_39
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 338
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f38c08652a853445bd7e85c373d25c6
+      internalID: 357904128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 210
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69437c3aa76318d448da9a482252e315
+      internalID: 383015922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_41
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 210
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 351789fe4e4e0dd4f9302acd09db4fcb
+      internalID: 489664920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_42
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 210
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6acd0a0c4320b0e48b59341818c1cd3e
+      internalID: -1875993437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_43
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 210
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98ce0fbea80f1d441a174119fa78a9cb
+      internalID: -1235464187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_44
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 210
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 557610f6700cbe141a4ef4ae1582af3f
+      internalID: 1960000930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_45
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 210
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d714c6b19ff61054396e77d7512d2a83
+      internalID: -664783614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_46
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 210
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca8a8f40b7de1a84d85eaf70e6d3e01e
+      internalID: 1564131696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_47
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 210
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b822e75b8e3534c48a2df157fb78b97e
+      internalID: 1952500680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 82
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1957775103122fe4198c3a0b27da27a1
+      internalID: 203177290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_49
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 82
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dab70e743881e754a8a3da1ee475a52a
+      internalID: 1207021414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_50
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 82
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03e2cdd23a0651040bccfd8a6ff9371d
+      internalID: 1803173805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_51
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 82
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cda4ec2927caf84c9cc33ba4a6239aa
+      internalID: 431558137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_52
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 82
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22c834f793aae234e80f9d2343264ec2
+      internalID: 203869473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_53
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 82
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 375c346f9e7967a4b8bd3a5c8790be29
+      internalID: 1928199089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_54
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 82
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c7b48fd3841f7f4d87f7103a03d36e8
+      internalID: -606290620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TexturesCom_HighRiseNight0089_1_seamless_S (2)_55
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 82
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d0beb4fa30186d4696ae9dd5b1faf62
+      internalID: 273021457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_0: -2108580654
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_1: -1707889157
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_10: -837243059
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_11: 1692971424
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_12: 953991983
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_13: -874075315
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_14: -1651061556
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_15: 200360255
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_16: 875170663
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_17: 1328791498
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_18: 859056926
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_19: 1665481990
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_2: -1310230047
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_20: 1226005508
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_21: -154720170
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_22: 541782020
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_23: -2037462549
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_24: 1198366580
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_25: -1865187236
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_26: -354278535
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_27: 992484041
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_28: -113543487
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_29: -773158077
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_3: 538756171
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_30: 697376158
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_31: -1316829800
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_32: -1683010159
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_33: 588617517
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_34: 297500579
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_35: -502153679
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_36: 906145826
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_37: 1341617065
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_38: -1905725993
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_39: 357904128
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_4: 501786721
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_40: 383015922
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_41: 489664920
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_42: -1875993437
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_43: -1235464187
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_44: 1960000930
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_45: -664783614
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_46: 1564131696
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_47: 1952500680
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_48: 203177290
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_49: 1207021414
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_5: 2108889020
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_50: 1803173805
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_51: 431558137
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_52: 203869473
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_53: 1928199089
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_54: -606290620
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_55: 273021457
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_6: 949788233
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_7: 595762313
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_8: 1065793385
+      TexturesCom_HighRiseNight0089_1_seamless_S (2)_9: -1431723441
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
