@@ -63,8 +63,8 @@ public class BGMSoundData
     public enum BGM
     {
         Title,
-        Dungeon,
-        Hoge, // これがラベルになる
+        Off,
+        Moon, // これがラベルになる
     }
 
     public BGM bgm;

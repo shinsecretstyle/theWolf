@@ -119,10 +119,12 @@ public class player : MonoBehaviour
         if (isInLight)
         {
             phaseProcess += Time.deltaTime * phaseUpSpeed;//フェーズの増加スピード掛け算
+            //SoundManager.Instance.PlayBGM(BGMSoundData.BGM.Moon);
         }
         else if (!isInLight && phaseProcess > 0f)
         {
             phaseProcess -= Time.deltaTime * phaseDownSpeed;//フェーズの減少スピード掛け算
+            //SoundManager.Instance.PlayBGM(BGMSoundData.BGM.Off);
         }
 
         if (phaseProcess >= phaseLimit && phaseID < 4)
@@ -156,7 +158,8 @@ public class player : MonoBehaviour
         {
             StartCoroutine(resetGroundChecker());
             canJump = false;
-            SoundManager.Instance.PlaySE(SESoundData.SE.Jump);
+            //ジャンプ音
+            //SoundManager.Instance.PlaySE(SESoundData.SE.Jump);
             //ジャンプの高さを維持するため、mass掛け算
             rb.AddForce(new Vector2(rb.velocity.x, jumpPower * 10 * rb.mass));
             StartCoroutine(resetJumpCD());
