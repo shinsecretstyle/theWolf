@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 public class Title : MonoBehaviour
 {
     private bool firstPush = false;
-    
-  
+
+
     //スタートボタンを押されたら呼ばれる
     public void PressStart()
     {
@@ -27,4 +27,3 @@ public class Title : MonoBehaviour
         
     }
 }
-

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.U2D;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class player : MonoBehaviour
 {
@@ -201,6 +202,10 @@ public class player : MonoBehaviour
         if(collision.tag == "Moon")
         {
             isInLight = true;
+        }
+        if(collision.tag == "Goal")
+        {
+            SceneManager.LoadScene("Goal");
         }
     }
     private void OnTriggerExit2D(Collider2D collision)

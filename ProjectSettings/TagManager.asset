@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - Moon
   - Ladder
+  - Goal
   layers:
   - Default
   - TransparentFX
