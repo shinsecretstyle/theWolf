@@ -34,12 +34,12 @@ public class BGMSE : MonoBehaviour
         if (Input.GetKey(KeyCode.RightArrow))
         {
             //‰¹(sound2)‚ð–Â‚ç‚·
-            GetComponents<AudioSource>()[2].Play();
+            GetComponents<AudioSource>()[0].Play();
         }
         if (Input.GetKey(KeyCode.A))
         {
             //‰¹(sound2)‚ð–Â‚ç‚·
-            GetComponents<AudioSource>()[2].Play();
+            GetComponents<AudioSource>()[0].Play();
         }
     }
 }
