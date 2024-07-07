@@ -5,9 +5,6 @@ using UnityEngine;
 public class BGMSE : MonoBehaviour
 {
 
-    public AudioClip sound1;
-    public AudioClip sound2;
-    public AudioClip sound3;
     AudioSource audioSource;
 
 
@@ -25,12 +22,21 @@ public class BGMSE : MonoBehaviour
             //‰¹(sound1)‚ð–Â‚ç‚·
             GetComponents<AudioSource>()[0].Play();
         }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            GetComponents<AudioSource>()[0].Play();
+        }
         if (Input.GetKeyDown(KeyCode.Space))
         {
             //‰¹(sound3)‚ð–Â‚ç‚·
             GetComponents<AudioSource>()[1].Play();
         }
         if (Input.GetKey(KeyCode.RightArrow))
+        {
+            //‰¹(sound2)‚ð–Â‚ç‚·
+            GetComponents<AudioSource>()[2].Play();
+        }
+        if (Input.GetKey(KeyCode.A))
         {
             //‰¹(sound2)‚ð–Â‚ç‚·
             GetComponents<AudioSource>()[2].Play();
