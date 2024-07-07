@@ -156,6 +156,7 @@ public class player : MonoBehaviour
         {
             StartCoroutine(resetGroundChecker());
             canJump = false;
+            SoundManager.Instance.PlaySE(SESoundData.SE.Jump);
             //ジャンプの高さを維持するため、mass掛け算
             rb.AddForce(new Vector2(rb.velocity.x, jumpPower * 10 * rb.mass));
             StartCoroutine(resetJumpCD());
