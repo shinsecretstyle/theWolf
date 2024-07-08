@@ -1,17 +1,20 @@
-ï»¿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.U2D;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Dynamic;
+using UnityEditor.Animations;
 
-public class player : MonoBehaviour
+public class PlayerWithAnim : MonoBehaviour
 {
     [SerializeField]
     private int phaseID;
     private float phaseUpSpeed = 0.8f;
     private float phaseDownSpeed = 0.2f;
+    private int lastDir = 1;//Å‰‚Í‰E‚ÉŒü‚¯
 
     public float speed;
     public float jumpPower;
@@ -25,17 +28,17 @@ public class player : MonoBehaviour
 
     [SerializeField]
     private bool canWallJump;
-    
+
 
     public Slider phaseSlider;
-    public Sprite phase1;
-    public Sprite phase2;
-    public Sprite phase3;
-    public Sprite phase4;
+    public AnimatorController phase1;
+    public AnimatorController phase2;
+    public AnimatorController phase3;
     public GameObject groundChecker;
     SpriteRenderer sr;
     Rigidbody2D rb;
     PolygonCollider2D polygonCollider;
+    Animator animator;
 
     void Start()
     {
@@ -44,21 +47,63 @@ public class player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         polygonCollider = GetComponent<PolygonCollider2D>();
+        animator = GetComponent<Animator>();
         speed = 4;
         jumpPower = 41;
+        animator.SetFloat("Phase1", 1f);
     }
 
     void Update()
     {
         phaseSlider.value = phaseProcess;
+        updateCollider();
         float move = Input.GetAxis("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
-        rb.velocity = new Vector2(move * speed,rb.velocity.y);
-        //
-        Debug.Log(rb.velocity + "   " + move);
+        rb.velocity = new Vector2(move * speed, rb.velocity.y);
+        Debug.Log(rb.velocity+"   "+move);
+        
+        if (move > 0)//‰EŒü‚¯‚Ìˆ—
+        {
+            animator.SetFloat("Speed", move);
+            animator.SetFloat("Right", 1f);
+            animator.SetFloat("Left", 0f);
+            animator.SetFloat("JumpUp", 0f);
+            lastDir = 1;//ˆÚ“®Œã‚ÌŒü‚¯
+        }
+        else if (move == 0)//Ã~ó‘Ô‚ÌŒü‚¯ˆ—
+        {
+            animator.SetFloat("Speed", 0);
+            if(lastDir > 0)
+            {
+                animator.SetFloat("Right", 1f);
+            }else animator.SetFloat("Left", 1f);
+        }
+        else//¶Œü‚¯‚Ìˆ—
+        {
+            animator.SetFloat("Speed", -move);
+            animator.SetFloat("Left", 1f);
+            animator.SetFloat("Right", 0f);
+            animator.SetFloat("JumpUp", 0f);
+            lastDir = -1;//ˆÚ“®Œã‚ÌŒü‚¯
+        }
+
         //rb.velocity = new Vector2(rb.velocity.x,y*2);
 
-        JumpEvent();
+        //JumpEvent();
+
+        if (Input.GetButton("Jump") && canJump)
+        {
+            //StartCoroutine(resetGroundChecker());
+            canJump = false;
+            //ƒWƒƒƒ“ƒv‰¹
+            //SoundManager.Instance.PlaySE(SESoundData.SE.Jump);
+            //ƒWƒƒƒ“ƒv‚Ì‚‚³‚ğˆÛ‚·‚é‚½‚ßAmassŠ|‚¯Z
+            animator.SetTrigger("Jump");
+            Debug.Log("Jump");
+            rb.AddForce(new Vector2(rb.velocity.x, jumpPower * 10 * rb.mass));
+            StartCoroutine(resetJumpCD());
+        }
+
 
         inTheLight();
 
@@ -66,42 +111,44 @@ public class player : MonoBehaviour
 
 
 
-    //phaseã«ã‚ˆã£ã¦å±æ€§å€¤ã®è¨­å®š
+    //phase‚É‚æ‚Á‚Ä‘®«’l‚Ìİ’è
     private void setPhaseByID(int id)
     {
-        
-        if(id == 1)//phase1
+
+        if (id == 1)//phase1
         {
-            sr.sprite = phase1;
-            updateCollider();
+            //sr.sprite = phase1;
+            //updateCollider();
+            animator.runtimeAnimatorController = phase1;
             speed = 4;
             rb.mass = 1;
             canWallJump = false;
         }
-        else if(id == 2)//phase2
+        else if (id == 2)//phase2
         {
+            animator.runtimeAnimatorController = phase2;
             speed = 6;
-            sr.sprite = phase2;
-            updateCollider();
+            //updateCollider();
             rb.mass = 1;
             canWallJump = true;
         }
-        else if(id == 3)//phase3
+        else if (id == 3)//phase3
         {
-            sr.sprite = phase3;
-            updateCollider();
-            //massã‚’å¢—åŠ ã—ã€è»Šã‚’æŠ¼ã™ã“ã¨ãŒã§ãã‚‹
+            animator.runtimeAnimatorController = phase3;
+            //sr.sprite = phase3;
+            //updateCollider();
+            //mass‚ğ‘‰Á‚µAÔ‚ğ‰Ÿ‚·‚±‚Æ‚ª‚Å‚«‚é
             rb.mass = 5f;
             canWallJump = false;
         }
-        else if(id == 4)//phase4
+        else if (id == 4)//phase4
         {
-            sr.sprite = phase4;
-            updateCollider();
+            //sr.sprite = phase4;
+            //updateCollider();
         }
     }
 
-    //phaseã«ã‚ˆã£ã¦Collierã‚’æ›´æ–°ã™ã‚‹
+    //phase‚É‚æ‚Á‚ÄCollier‚ğXV‚·‚é
     private void updateCollider()
     {
         int pathCount = sr.sprite.GetPhysicsShapeCount();
@@ -119,12 +166,12 @@ public class player : MonoBehaviour
     {
         if (isInLight)
         {
-            phaseProcess += Time.deltaTime * phaseUpSpeed;//ãƒ•ã‚§ãƒ¼ã‚ºã®å¢—åŠ ã‚¹ãƒ”ãƒ¼ãƒ‰æ›ã‘ç®—
+            phaseProcess += Time.deltaTime * phaseUpSpeed;//ƒtƒF[ƒY‚Ì‘‰ÁƒXƒs[ƒhŠ|‚¯Z
             //SoundManager.Instance.PlayBGM(BGMSoundData.BGM.Moon);
         }
         else if (!isInLight && phaseProcess > 0f)
         {
-            phaseProcess -= Time.deltaTime * phaseDownSpeed;//ãƒ•ã‚§ãƒ¼ã‚ºã®æ¸›å°‘ã‚¹ãƒ”ãƒ¼ãƒ‰æ›ã‘ç®—
+            phaseProcess -= Time.deltaTime * phaseDownSpeed;//ƒtƒF[ƒY‚ÌŒ¸­ƒXƒs[ƒhŠ|‚¯Z
             //SoundManager.Instance.PlayBGM(BGMSoundData.BGM.Off);
         }
 
@@ -134,7 +181,8 @@ public class player : MonoBehaviour
             setPhaseByID(phaseID);
             phaseProcess = 0f;
         }
-        else if (phaseProcess <= 0 && phaseID > 1) {
+        else if (phaseProcess <= 0 && phaseID > 1)
+        {
             phaseID--;
             setPhaseByID(phaseID);
             phaseProcess = phaseLimit;
@@ -157,11 +205,13 @@ public class player : MonoBehaviour
     {
         if (Input.GetButton("Jump") && canJump)
         {
-            StartCoroutine(resetGroundChecker());
+            //StartCoroutine(resetGroundChecker());
             canJump = false;
-            //ã‚¸ãƒ£ãƒ³ãƒ—éŸ³
+            //ƒWƒƒƒ“ƒv‰¹
             //SoundManager.Instance.PlaySE(SESoundData.SE.Jump);
-            //ã‚¸ãƒ£ãƒ³ãƒ—ã®é«˜ã•ã‚’ç¶­æŒã™ã‚‹ãŸã‚ã€massæ›ã‘ç®—
+            //ƒWƒƒƒ“ƒv‚Ì‚‚³‚ğˆÛ‚·‚é‚½‚ßAmassŠ|‚¯Z
+            animator.SetTrigger("Jump");
+            Debug.Log("Jump");
             rb.AddForce(new Vector2(rb.velocity.x, jumpPower * 10 * rb.mass));
             StartCoroutine(resetJumpCD());
         }
@@ -171,7 +221,8 @@ public class player : MonoBehaviour
         {
             canJump = true;
             StopCoroutine(resetJumpCD());
-        }else if(canWallJump && isOnWall)
+        }
+        else if (canWallJump && isOnWall)
         {
             canJump = true;
             StopCoroutine(resetJumpCD());
@@ -181,7 +232,8 @@ public class player : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Ground")) {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
             rb.velocity = Vector2.zero;
             //canJump = true;
         }
@@ -191,7 +243,7 @@ public class player : MonoBehaviour
     {
         isOnGround = isground;
     }
-    
+
     public void checkWall(bool isWall)
     {
         isOnWall = isWall;
@@ -204,11 +256,11 @@ public class player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Moon")
+        if (collision.tag == "Moon")
         {
             isInLight = true;
         }
-        if(collision.tag == "Goal")
+        if (collision.tag == "Goal")
         {
             SceneManager.LoadScene("Goal");
         }
@@ -223,9 +275,10 @@ public class player : MonoBehaviour
 
     public void checkLight(bool inLight)
     {
-        if(inLight)
+        if (inLight)
         {
             isInLight = true;
-        }else isInLight = false;
+        }
+        else isInLight = false;
     }
 }

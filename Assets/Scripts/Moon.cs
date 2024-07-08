@@ -6,6 +6,7 @@ public class Moon : MonoBehaviour
 {
     public GameObject Player;
     private player thePlayer;
+    private PlayerWithAnim player;
 
     [SerializeField]
     private int rayNums = 360;
@@ -21,6 +22,7 @@ public class Moon : MonoBehaviour
     {
         moonCollider = GetComponent<CircleCollider2D>();
         thePlayer = Player.GetComponent<player>();
+        player = Player.GetComponent<PlayerWithAnim>();
         Light2D moonData = moonObject.GetComponent<Light2D>();
         radius = moonData.pointLightOuterRadius;
     }
@@ -29,8 +31,14 @@ public class Moon : MonoBehaviour
     {
         if (isInLight())
         {
-            thePlayer.checkLight(true);
-        }else thePlayer.checkLight(false);
+            //thePlayer.checkLight(true);
+            player.checkLight(true);
+        }
+        else
+        {
+            //thePlayer.checkLight(false);
+            player.checkLight(false);
+        }
     }
 
     bool isInLight()
