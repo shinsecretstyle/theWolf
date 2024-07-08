@@ -9,21 +9,25 @@ public class Title : MonoBehaviour
     private bool firstPush = false;
 
 
-    //ƒXƒ^[ƒgƒ{ƒ^ƒ“‚ğ‰Ÿ‚³‚ê‚½‚çŒÄ‚Î‚ê‚é
+    //ï¿½Xï¿½^ï¿½[ï¿½gï¿½{ï¿½^ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½ï¿½Ä‚Î‚ï¿½ï¿½
     public void PressStart()
-    {
-        Debug.Log("Press Start!");
-        
+    {     
+         Debug.Log("Press Start!");
 
         if (!firstPush)
         {
-            Debug.Log("Go Next Scense!");
+            Debug.Log("Go Next Scene!");
 
-            //‚±‚±‚ÉŸ‚ÌƒV[ƒ“‚Ös‚­–½—ß‚ğ‘‚­
-            SceneManager.LoadScene("WolfMap2");
-            //
+            // 2ç§’å¾Œã«ã‚·ãƒ¼ãƒ³é·ç§»
+            StartCoroutine(LoadSceneAfterWait(1.0f));
+
             firstPush = true;
         }
-        
     }
+
+    IEnumerator LoadSceneAfterWait(float waitTime)
+   {
+        yield return new WaitForSeconds(waitTime);
+        SceneManager.LoadScene("Prologue");
+   }
 }
