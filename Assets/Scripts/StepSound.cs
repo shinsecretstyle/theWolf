@@ -8,10 +8,15 @@ public class StepSound : MonoBehaviour
 
     public AudioClip phase1left;
     public AudioClip phase1right;
+    public AudioClip phase1jumpleft;
+    public AudioClip phase1jumpright;
     public AudioClip phase2left;
     public AudioClip phase2right;
+    public AudioClip phase2jumpleft;
+    public AudioClip phase2jumpright;
     public AudioClip phase3left;
     public AudioClip phase3right;
+    
 
     private void Start()
     {
@@ -27,6 +32,14 @@ public class StepSound : MonoBehaviour
     {
         AS.PlayOneShot(phase1right);
     }
+    public void phase1JumpLeft()
+    {
+        AS.PlayOneShot(phase1jumpleft);
+    }
+    public void phase1JumpRight()
+    {
+        AS.PlayOneShot(phase1jumpright);
+    }
 
     public void phase2Left() 
     {
@@ -35,6 +48,14 @@ public class StepSound : MonoBehaviour
     public void phase2Right()
     {
         AS.PlayOneShot(phase2right);
+    }
+    public void phase2jumpLeft() 
+    {
+        AS.PlayOneShot(phase2jumpleft);
+    }
+    public void phase2jumpRight() 
+    {
+        AS.PlayOneShot(phase2jumpright);
     }
     public void phase3Left()
     {
