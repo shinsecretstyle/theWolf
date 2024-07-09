@@ -4,31 +4,5 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/Title.unity
-    guid: 9e07f2f831f16714fa26aa8d1dea5d5f
-<<<<<<< Updated upstream
-  - enabled: 0
-    path: Assets/Scenes/WolfMap2.unity
-=======
-  - enabled: 1
-    path: "Assets/Scenes/WolfMap2(\u30A2\u30CB\u30E1\u30FC\u30B7\u30E7\u30F3\u3042\u308A).unity"
->>>>>>> Stashed changes
-    guid: 6c971f0c0f9dbf74b9ff0d2b3aafac20
-  - enabled: 1
-    path: Assets/Scenes/GoalTest/Goal.unity
-    guid: d9cbec22657e8fe48b1a763a1b498297
-  - enabled: 0
-    path: Assets/Scenes/GoalTest/wolf map(goal).unity
-    guid: e6cacf2bdd591a340972e7d1f2a4d3cd
-  - enabled: 0
-    path: Assets/Scenes/LightTest/StaticLight.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-    path: Assets/Scenes/audio demo.unity
-    guid: 035aafba51b7924448726b3469c9091f
-  - enabled: 1
-    path: Assets/Scenes/Prologue.unity
-    guid: 1947c129a42e2344b94f8b273cdcfcd2
+  m_Scenes: []
   m_configObjects: {}
