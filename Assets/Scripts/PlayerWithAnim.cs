@@ -14,7 +14,7 @@ public class PlayerWithAnim : MonoBehaviour
     private int phaseID;
     private float phaseUpSpeed = 0.8f;
     private float phaseDownSpeed = 0.2f;
-    private int lastDir = 1;//Å‰‚Í‰E‚ÉŒü‚¯
+    private int lastDir = 1;//ï¿½Åï¿½ï¿½Í‰Eï¿½ÉŒï¿½ï¿½ï¿½
 
     public float speed;
     public float jumpPower;
@@ -25,6 +25,8 @@ public class PlayerWithAnim : MonoBehaviour
     public bool isInLight;
     public bool isOnGround;
     public bool isOnWall;
+    //public AudioClip æœˆã®å…‰;
+    //public AudioClip ç„¡éŸ³;
 
     [SerializeField]
     private bool canWallJump;
@@ -39,6 +41,7 @@ public class PlayerWithAnim : MonoBehaviour
     Rigidbody2D rb;
     PolygonCollider2D polygonCollider;
     Animator animator;
+    AudioSource audioSource;
 
     void Start()
     {
@@ -51,6 +54,7 @@ public class PlayerWithAnim : MonoBehaviour
         speed = 4;
         jumpPower = 41;
         animator.SetFloat("Phase1", 1f);
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -62,15 +66,15 @@ public class PlayerWithAnim : MonoBehaviour
         rb.velocity = new Vector2(move * speed, rb.velocity.y);
         Debug.Log(rb.velocity+"   "+move);
         
-        if (move > 0)//‰EŒü‚¯‚Ìˆ—
+        if (move > 0)//ï¿½Eï¿½ï¿½ï¿½ï¿½ï¿½Ìï¿½ï¿½ï¿½
         {
             animator.SetFloat("Speed", move);
             animator.SetFloat("Right", 1f);
             animator.SetFloat("Left", 0f);
             animator.SetFloat("JumpUp", 0f);
-            lastDir = 1;//ˆÚ“®Œã‚ÌŒü‚¯
+            lastDir = 1;//ï¿½Ú“ï¿½ï¿½ï¿½ÌŒï¿½ï¿½ï¿½
         }
-        else if (move == 0)//Ã~ó‘Ô‚ÌŒü‚¯ˆ—
+        else if (move == 0)//ï¿½Ã~ï¿½ï¿½Ô‚ÌŒï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         {
             animator.SetFloat("Speed", 0);
             if(lastDir > 0)
@@ -78,13 +82,13 @@ public class PlayerWithAnim : MonoBehaviour
                 animator.SetFloat("Right", 1f);
             }else animator.SetFloat("Left", 1f);
         }
-        else//¶Œü‚¯‚Ìˆ—
+        else//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ìï¿½ï¿½ï¿½
         {
             animator.SetFloat("Speed", -move);
             animator.SetFloat("Left", 1f);
             animator.SetFloat("Right", 0f);
             animator.SetFloat("JumpUp", 0f);
-            lastDir = -1;//ˆÚ“®Œã‚ÌŒü‚¯
+            lastDir = -1;//ï¿½Ú“ï¿½ï¿½ï¿½ÌŒï¿½ï¿½ï¿½
         }
 
         //rb.velocity = new Vector2(rb.velocity.x,y*2);
@@ -95,9 +99,9 @@ public class PlayerWithAnim : MonoBehaviour
         {
             //StartCoroutine(resetGroundChecker());
             canJump = false;
-            //ƒWƒƒƒ“ƒv‰¹
+            //ï¿½Wï¿½ï¿½ï¿½ï¿½ï¿½vï¿½ï¿½
             //SoundManager.Instance.PlaySE(SESoundData.SE.Jump);
-            //ƒWƒƒƒ“ƒv‚Ì‚‚³‚ğˆÛ‚·‚é‚½‚ßAmassŠ|‚¯Z
+            //ï¿½Wï¿½ï¿½ï¿½ï¿½ï¿½vï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ûï¿½ï¿½ï¿½ï¿½é‚½ï¿½ßAmassï¿½|ï¿½ï¿½ï¿½Z
             animator.SetTrigger("Jump");
             Debug.Log("Jump");
             rb.AddForce(new Vector2(rb.velocity.x, jumpPower * 10 * rb.mass));
@@ -111,7 +115,7 @@ public class PlayerWithAnim : MonoBehaviour
 
 
 
-    //phase‚É‚æ‚Á‚Ä‘®«’l‚Ìİ’è
+    //phaseï¿½É‚ï¿½ï¿½ï¿½Ä‘ï¿½ï¿½ï¿½ï¿½lï¿½Ìİ’ï¿½
     private void setPhaseByID(int id)
     {
 
@@ -137,7 +141,7 @@ public class PlayerWithAnim : MonoBehaviour
             animator.runtimeAnimatorController = phase3;
             //sr.sprite = phase3;
             //updateCollider();
-            //mass‚ğ‘‰Á‚µAÔ‚ğ‰Ÿ‚·‚±‚Æ‚ª‚Å‚«‚é
+            //massï¿½ğ‘‰ï¿½ï¿½ï¿½ï¿½Aï¿½Ô‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½Å‚ï¿½ï¿½ï¿½
             rb.mass = 5f;
             canWallJump = false;
         }
@@ -148,7 +152,7 @@ public class PlayerWithAnim : MonoBehaviour
         }
     }
 
-    //phase‚É‚æ‚Á‚ÄCollier‚ğXV‚·‚é
+    //phaseï¿½É‚ï¿½ï¿½ï¿½ï¿½Collierï¿½ï¿½ï¿½Xï¿½Vï¿½ï¿½ï¿½ï¿½
     private void updateCollider()
     {
         int pathCount = sr.sprite.GetPhysicsShapeCount();
@@ -166,13 +170,27 @@ public class PlayerWithAnim : MonoBehaviour
     {
         if (isInLight)
         {
-            phaseProcess += Time.deltaTime * phaseUpSpeed;//ƒtƒF[ƒY‚Ì‘‰ÁƒXƒs[ƒhŠ|‚¯Z
+            phaseProcess += Time.deltaTime * phaseUpSpeed;//ï¿½tï¿½Fï¿½[ï¿½Yï¿½Ì‘ï¿½ï¿½ï¿½ï¿½Xï¿½sï¿½[ï¿½hï¿½|ï¿½ï¿½ï¿½Z
             //SoundManager.Instance.PlayBGM(BGMSoundData.BGM.Moon);
+            //if(audioSource !=null)
+            //{
+            //    AudioSource audioSource = GetComponents<AudioSource>()[0];
+            //    audioSource.volume = 0.1f;
+            //    audioSource.PlayOneShot (æœˆã®å…‰);
+            //    audioSource.loop = true;
+            //}
         }
         else if (!isInLight && phaseProcess > 0f)
         {
-            phaseProcess -= Time.deltaTime * phaseDownSpeed;//ƒtƒF[ƒY‚ÌŒ¸­ƒXƒs[ƒhŠ|‚¯Z
+            phaseProcess -= Time.deltaTime * phaseDownSpeed;//ï¿½tï¿½Fï¿½[ï¿½Yï¿½ÌŒï¿½ï¿½ï¿½ï¿½Xï¿½sï¿½[ï¿½hï¿½|ï¿½ï¿½ï¿½Z
             //SoundManager.Instance.PlayBGM(BGMSoundData.BGM.Off);
+            //if(audioSource !=null)
+            //{
+            //    AudioSource audioSource = GetComponents<AudioSource>()[0];
+            //    audioSource.volume = 0f;
+            //    audioSource.PlayOneShot (ç„¡éŸ³);
+            //    audioSource.loop = true;
+            //}
         }
 
         if (phaseProcess >= phaseLimit && phaseID < 4)
@@ -207,9 +225,9 @@ public class PlayerWithAnim : MonoBehaviour
         {
             //StartCoroutine(resetGroundChecker());
             canJump = false;
-            //ƒWƒƒƒ“ƒv‰¹
+            //ï¿½Wï¿½ï¿½ï¿½ï¿½ï¿½vï¿½ï¿½
             //SoundManager.Instance.PlaySE(SESoundData.SE.Jump);
-            //ƒWƒƒƒ“ƒv‚Ì‚‚³‚ğˆÛ‚·‚é‚½‚ßAmassŠ|‚¯Z
+            //ï¿½Wï¿½ï¿½ï¿½ï¿½ï¿½vï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ûï¿½ï¿½ï¿½ï¿½é‚½ï¿½ßAmassï¿½|ï¿½ï¿½ï¿½Z
             animator.SetTrigger("Jump");
             Debug.Log("Jump");
             rb.AddForce(new Vector2(rb.velocity.x, jumpPower * 10 * rb.mass));

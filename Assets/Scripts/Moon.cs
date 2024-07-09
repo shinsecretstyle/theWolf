@@ -14,8 +14,10 @@ public class Moon : MonoBehaviour
     private float radius;
 
     public LayerMask layerMask;
+    public AudioClip 月の光;
     
     CircleCollider2D moonCollider;
+    AudioSource audioSource;
 
     public GameObject moonObject;
     void Start()
@@ -25,6 +27,7 @@ public class Moon : MonoBehaviour
         player = Player.GetComponent<PlayerWithAnim>();
         Light2D moonData = moonObject.GetComponent<Light2D>();
         radius = moonData.pointLightOuterRadius;
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -33,11 +36,25 @@ public class Moon : MonoBehaviour
         {
             //thePlayer.checkLight(true);
             player.checkLight(true);
+            
+            if(audioSource !=null)
+            {
+                AudioSource audioSource = GetComponents<AudioSource>()[0];
+                audioSource.volume = 0.09f;
+                audioSource.PlayOneShot (月の光);
+                //audioSource.loop = true;
+            }
         }
         else
         {
             //thePlayer.checkLight(false);
             player.checkLight(false);
+
+            if(audioSource !=null)
+            {
+                //audioSource.loop = false;
+                audioSource.Stop();
+            }
         }
     }
 
