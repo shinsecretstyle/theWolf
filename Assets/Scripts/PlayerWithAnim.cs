@@ -25,8 +25,6 @@ public class PlayerWithAnim : MonoBehaviour
     public bool isInLight;
     public bool isOnGround;
     public bool isOnWall;
-    //public AudioClip 月の光;
-    //public AudioClip 無音;
 
     [SerializeField]
     private bool canWallJump;
@@ -41,7 +39,6 @@ public class PlayerWithAnim : MonoBehaviour
     Rigidbody2D rb;
     PolygonCollider2D polygonCollider;
     Animator animator;
-    AudioSource audioSource;
 
     void Start()
     {
@@ -54,7 +51,6 @@ public class PlayerWithAnim : MonoBehaviour
         speed = 4;
         jumpPower = 41;
         animator.SetFloat("Phase1", 1f);
-        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -171,26 +167,11 @@ public class PlayerWithAnim : MonoBehaviour
         if (isInLight)
         {
             phaseProcess += Time.deltaTime * phaseUpSpeed;//�t�F�[�Y�̑����X�s�[�h�|���Z
-            //SoundManager.Instance.PlayBGM(BGMSoundData.BGM.Moon);
-            //if(audioSource !=null)
-            //{
-            //    AudioSource audioSource = GetComponents<AudioSource>()[0];
-            //    audioSource.volume = 0.1f;
-            //    audioSource.PlayOneShot (月の光);
-            //    audioSource.loop = true;
-            //}
+
         }
         else if (!isInLight && phaseProcess > 0f)
         {
             phaseProcess -= Time.deltaTime * phaseDownSpeed;//�t�F�[�Y�̌����X�s�[�h�|���Z
-            //SoundManager.Instance.PlayBGM(BGMSoundData.BGM.Off);
-            //if(audioSource !=null)
-            //{
-            //    AudioSource audioSource = GetComponents<AudioSource>()[0];
-            //    audioSource.volume = 0f;
-            //    audioSource.PlayOneShot (無音);
-            //    audioSource.loop = true;
-            //}
         }
 
         if (phaseProcess >= phaseLimit && phaseID < 4)
