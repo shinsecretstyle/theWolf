@@ -6,7 +6,6 @@ using UnityEngine.U2D;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Dynamic;
-using UnityEditor.Animations;
 
 public class PlayerWithAnim : MonoBehaviour
 {
