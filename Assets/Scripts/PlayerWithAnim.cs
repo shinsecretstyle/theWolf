@@ -10,15 +10,17 @@ using System.Dynamic;
 public class PlayerWithAnim : MonoBehaviour
 {
     [SerializeField]
-    private int phaseID;
     private float phaseUpSpeed = 1f;
+    [SerializeField]
     private float phaseDownSpeed = 0.2f;
+    [SerializeField]
     private int lastDir = 1;//1は右向け、-1は左向け
 
+    public int phaseID;
     public float speed;
     public float jumpPower;
     public float jumpCD = 1f;
-    public float phaseLimit = 7f;
+    float phaseLimit;
     public float phaseUpTime = 7f;//具体的に時間秒数
     public float phaseDownTime = 5f;//具体的に時間秒数
     public float phaseProcess = 0f;
@@ -29,7 +31,6 @@ public class PlayerWithAnim : MonoBehaviour
 
     [SerializeField]
     private bool canWallJump;
-
 
     public Slider phaseSlider;
     public RuntimeAnimatorController phase1;
@@ -43,6 +44,7 @@ public class PlayerWithAnim : MonoBehaviour
 
     void Start()
     {
+        phaseLimit = phaseUpTime;
         phaseUpSpeed = phaseLimit/phaseUpTime;
         phaseDownSpeed = phaseLimit/phaseDownTime;
         phaseID = 1;
@@ -63,7 +65,6 @@ public class PlayerWithAnim : MonoBehaviour
         float move = Input.GetAxis("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
         rb.velocity = new Vector2(move * speed, rb.velocity.y);
-        Debug.Log(rb.velocity+"   "+move);
         
         if (move > 0)//右向け移動
         {
@@ -89,8 +90,6 @@ public class PlayerWithAnim : MonoBehaviour
             animator.SetFloat("JumpUp", 0f);
             lastDir = -1;//左向け
         }
-
-        //rb.velocity = new Vector2(rb.velocity.x,y*2);
 
         //JumpEvent();
 
@@ -120,34 +119,32 @@ public class PlayerWithAnim : MonoBehaviour
 
         if (id == 1)//phase1
         {
-            //sr.sprite = phase1;
-            //updateCollider();
+            phaseProcess = 0f;
             animator.runtimeAnimatorController = phase1;
             speed = 4;
             rb.mass = 1;
             canWallJump = false;
+
         }
         else if (id == 2)//phase2
         {
+            phaseProcess = 0f;
             animator.runtimeAnimatorController = phase2;
             speed = 6;
-            //updateCollider();
             rb.mass = 1;
             canWallJump = true;
         }
         else if (id == 3)//phase3
         {
+            phaseProcess = 0f;
             animator.runtimeAnimatorController = phase3;
-            //sr.sprite = phase3;
-            //updateCollider();
-            //massを増加し、車を押すことができる
-            rb.mass = 5f;
+            rb.mass = 5f;//massを増加し、車を押すことができる
             canWallJump = false;
         }
         else if (id == 4)//phase4
         {
-            //sr.sprite = phase4;
-            //updateCollider();
+
+            //ゲームオーバー関数を読み込む
         }
     }
 
@@ -181,7 +178,6 @@ public class PlayerWithAnim : MonoBehaviour
         {
             phaseID++;
             setPhaseByID(phaseID);
-            phaseProcess = 0f;
         }
         else if (phaseProcess <= 0 && phaseID > 1)
         {
@@ -192,6 +188,7 @@ public class PlayerWithAnim : MonoBehaviour
         else if (phaseProcess <= 0 && phaseID == 1)
         {
             phaseProcess = 0f;
+
         }
 
     }
