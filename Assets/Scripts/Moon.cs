@@ -20,6 +20,9 @@ public class Moon : MonoBehaviour
     AudioSource audioSource;
 
     public GameObject moonObject;
+
+    bool isLightOut = false;
+    float lightOutTime = 0f;
     void Start()
     {
         moonCollider = GetComponent<CircleCollider2D>();
@@ -44,16 +47,25 @@ public class Moon : MonoBehaviour
                 audioSource.PlayOneShot (月の光);
                 //audioSource.loop = true;
             }
+        isLightOut = false;
+        lightOutTime = 0f;
         }
         else
         {
             //thePlayer.checkLight(false);
             player.checkLight(false);
-
-            if(audioSource !=null)
+            if(!isLightOut)
             {
-                //audioSource.loop = false;
-                audioSource.Stop();
+                isLightOut = true;
+                lightOutTime = Time.time;
+            }
+            if(Time.time - lightOutTime >= 0.5f)
+            {
+                if(audioSource !=null)
+                {
+                    //audioSource.loop = false;
+                    audioSource.Stop();
+                }
             }
         }
     }
