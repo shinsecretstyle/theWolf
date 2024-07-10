@@ -6,28 +6,33 @@ using UnityEngine.SceneManagement;
 
 public class Title : MonoBehaviour
 {
+    [Header("フェード")] public FadeImage fade;
+
     private bool firstPush = false;
+    private bool goNextScene = false;
 
-
-    //�X�^�[�g�{�^���������ꂽ��Ă΂��
+    //スタートボタンを押されたら呼ばれる
     public void PressStart()
-    {     
-         Debug.Log("Press Start!");
+    {
+        Debug.Log("Press Start!");
+
 
         if (!firstPush)
         {
-            Debug.Log("Go Next Scene!");
-
-            // 2秒後にシーン遷移
-            StartCoroutine(LoadSceneAfterWait(1.0f));
-
+            Debug.Log("Go Next Scense!");
+            fade.StartFadeOut();
             firstPush = true;
         }
+
     }
 
-    IEnumerator LoadSceneAfterWait(float waitTime)
-   {
-        yield return new WaitForSeconds(waitTime);
-        SceneManager.LoadScene("Prologue");
-   }
+
+    private void Update()
+    {
+        if (!goNextScene && fade.IsFadeOutComplete())
+        {
+            SceneManager.LoadScene("Prologue");
+            goNextScene = true;
+        }
+    }
 }
