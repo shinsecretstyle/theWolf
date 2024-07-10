@@ -5,9 +5,9 @@ using UnityEngine;
 public class DoorScripts : MonoBehaviour
 {
     float defaultY;
-    float openY = 5f;
+    float openY = 5.5f;
     //ドアが開く範囲
-    float speed = 1f;
+    float speed = 1.2f;
     //ドアが開くスピード
     public bool isOpen;
 
