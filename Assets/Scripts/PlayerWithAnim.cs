@@ -14,7 +14,7 @@ public class PlayerWithAnim : MonoBehaviour
     private int phaseID;
     private float phaseUpSpeed = 0.8f;
     private float phaseDownSpeed = 0.2f;
-    private int lastDir = 1;//�ŏ��͉E�Ɍ���
+    private int lastDir = 1;//1は右向け、-1は左向け
 
     public float speed;
     public float jumpPower;
@@ -62,15 +62,15 @@ public class PlayerWithAnim : MonoBehaviour
         rb.velocity = new Vector2(move * speed, rb.velocity.y);
         Debug.Log(rb.velocity+"   "+move);
         
-        if (move > 0)//�E�����̏���
+        if (move > 0)//右向け移動
         {
             animator.SetFloat("Speed", move);
             animator.SetFloat("Right", 1f);
             animator.SetFloat("Left", 0f);
             animator.SetFloat("JumpUp", 0f);
-            lastDir = 1;//�ړ���̌���
+            lastDir = 1;//右向け
         }
-        else if (move == 0)//�Î~��Ԃ̌�������
+        else if (move == 0)//止まる状態
         {
             animator.SetFloat("Speed", 0);
             if(lastDir > 0)
@@ -78,13 +78,13 @@ public class PlayerWithAnim : MonoBehaviour
                 animator.SetFloat("Right", 1f);
             }else animator.SetFloat("Left", 1f);
         }
-        else//�������̏���
+        else//左向け移動
         {
             animator.SetFloat("Speed", -move);
             animator.SetFloat("Left", 1f);
             animator.SetFloat("Right", 0f);
             animator.SetFloat("JumpUp", 0f);
-            lastDir = -1;//�ړ���̌���
+            lastDir = -1;//左向け
         }
 
         //rb.velocity = new Vector2(rb.velocity.x,y*2);
@@ -95,9 +95,9 @@ public class PlayerWithAnim : MonoBehaviour
         {
             //StartCoroutine(resetGroundChecker());
             canJump = false;
-            //�W�����v��
+            //ジャンプ音
             //SoundManager.Instance.PlaySE(SESoundData.SE.Jump);
-            //�W�����v�̍������ێ����邽�߁Amass�|���Z
+            //ジャンプの高さを維持するため、mass掛け算
             animator.SetTrigger("Jump");
             Debug.Log("Jump");
             rb.AddForce(new Vector2(rb.velocity.x, jumpPower * 10 * rb.mass));
@@ -111,7 +111,7 @@ public class PlayerWithAnim : MonoBehaviour
 
 
 
-    //phase�ɂ���đ����l�̐ݒ�
+    //phaseによって属性値の設定
     private void setPhaseByID(int id)
     {
 
@@ -137,7 +137,7 @@ public class PlayerWithAnim : MonoBehaviour
             animator.runtimeAnimatorController = phase3;
             //sr.sprite = phase3;
             //updateCollider();
-            //mass�𑝉����A�Ԃ��������Ƃ��ł���
+            //massを増加し、車を押すことができる
             rb.mass = 5f;
             canWallJump = false;
         }
@@ -148,7 +148,7 @@ public class PlayerWithAnim : MonoBehaviour
         }
     }
 
-    //phase�ɂ����Collier���X�V����
+    //phaseによってCollierを更新する
     private void updateCollider()
     {
         int pathCount = sr.sprite.GetPhysicsShapeCount();
@@ -166,12 +166,12 @@ public class PlayerWithAnim : MonoBehaviour
     {
         if (isInLight)
         {
-            phaseProcess += Time.deltaTime * phaseUpSpeed;//�t�F�[�Y�̑����X�s�[�h�|���Z
+            phaseProcess += Time.deltaTime * phaseUpSpeed;//フェーズの増加スピード掛け算
 
         }
         else if (!isInLight && phaseProcess > 0f)
         {
-            phaseProcess -= Time.deltaTime * phaseDownSpeed;//�t�F�[�Y�̌����X�s�[�h�|���Z
+            phaseProcess -= Time.deltaTime * phaseDownSpeed;//フェーズの減少スピード掛け算
         }
 
         if (phaseProcess >= phaseLimit && phaseID < 4)
@@ -206,9 +206,9 @@ public class PlayerWithAnim : MonoBehaviour
         {
             //StartCoroutine(resetGroundChecker());
             canJump = false;
-            //�W�����v��
+            //ジャンプ音
             //SoundManager.Instance.PlaySE(SESoundData.SE.Jump);
-            //�W�����v�̍������ێ����邽�߁Amass�|���Z
+            //ジャンプの高さを維持するため、mass掛け算
             animator.SetTrigger("Jump");
             Debug.Log("Jump");
             rb.AddForce(new Vector2(rb.velocity.x, jumpPower * 10 * rb.mass));
