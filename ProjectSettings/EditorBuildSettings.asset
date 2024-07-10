@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Prologue.unity
     guid: 1947c129a42e2344b94f8b273cdcfcd2
+  - enabled: 1
+    path: Assets/Scenes/audio demo.unity
+    guid: 035aafba51b7924448726b3469c9091f
   m_configObjects: {}
