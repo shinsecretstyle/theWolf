@@ -33,9 +33,9 @@ public class PlayerWithAnim : MonoBehaviour
 
 
     public Slider phaseSlider;
-    public AnimatorController phase1;
-    public AnimatorController phase2;
-    public AnimatorController phase3;
+    public RuntimeAnimatorController phase1;
+    public RuntimeAnimatorController phase2;
+    public RuntimeAnimatorController phase3;
     public GameObject groundChecker;
     SpriteRenderer sr;
     Rigidbody2D rb;
