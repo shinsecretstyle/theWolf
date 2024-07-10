@@ -12,14 +12,16 @@ public class PlayerWithAnim : MonoBehaviour
 {
     [SerializeField]
     private int phaseID;
-    private float phaseUpSpeed = 0.8f;
+    private float phaseUpSpeed = 1f;
     private float phaseDownSpeed = 0.2f;
     private int lastDir = 1;//1は右向け、-1は左向け
 
     public float speed;
     public float jumpPower;
     public float jumpCD = 1f;
-    public float phaseLimit = 5f;
+    public float phaseLimit = 7f;
+    public float phaseUpTime = 7f;//具体的に時間秒数
+    public float phaseDownTime = 5f;//具体的に時間秒数
     public float phaseProcess = 0f;
     public bool canJump = true;
     public bool isInLight;
@@ -42,6 +44,8 @@ public class PlayerWithAnim : MonoBehaviour
 
     void Start()
     {
+        phaseUpSpeed = phaseLimit/phaseUpTime;
+        phaseDownSpeed = phaseLimit/phaseDownTime;
         phaseID = 1;
         phaseSlider.maxValue = phaseLimit;
         rb = GetComponent<Rigidbody2D>();
