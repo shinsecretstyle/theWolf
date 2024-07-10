@@ -1,10 +1,10 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PrologueTransition : MonoBehaviour
+public class Operation : MonoBehaviour
 {
-    private string nextSceneName = "Operation instructions";
-    private float waitTime = 31.0f;
+    private string nextSceneName = "WolfMap2(アニメーションあり)";
+    private float waitTime = 5.0f;
 
     void Start()
     {
