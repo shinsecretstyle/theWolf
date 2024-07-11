@@ -236,6 +236,7 @@ public class PlayerWithAnim : MonoBehaviour
             rb.velocity = Vector2.zero;
             //canJump = true;
         }
+        Debug.Log("Collided with: " + collision.gameObject.name);
     }
 
     public void checkGround(bool isground)
