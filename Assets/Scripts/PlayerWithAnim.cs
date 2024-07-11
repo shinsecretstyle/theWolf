@@ -56,6 +56,7 @@ public class PlayerWithAnim : MonoBehaviour
         speed = 4;
         jumpPower = 41;
         animator.SetFloat("Phase1", 1f);
+        SoundManager.Instance.PlayBGM(BGMSoundData.BGM.BGM);
     }
 
     void Update()

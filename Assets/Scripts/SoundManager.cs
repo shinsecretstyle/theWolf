@@ -64,7 +64,8 @@ public class BGMSoundData
     {
         Title,
         Off,
-        Moon, // これがラベルになる
+        Moon,
+        BGM,// これがラベルになる
     }
 
     public BGM bgm;
