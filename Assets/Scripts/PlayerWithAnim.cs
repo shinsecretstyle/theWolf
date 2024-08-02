@@ -103,10 +103,16 @@ public class PlayerWithAnim : MonoBehaviour
             //ジャンプの高さを維持するため、mass掛け算
             animator.SetTrigger("Jump");
             Debug.Log("Jump");
+
+            //空中二段ジャンプの高さを修正ためのコード
+            Vector2 v = rb.velocity;
+            v.y = 0f;
+            rb.velocity = v;//落ちてるスピードを0に設定
+
+            //ジャンプ
             rb.AddForce(new Vector2(rb.velocity.x, jumpPower * 10 * rb.mass));
             StartCoroutine(resetJumpCD());
         }
-
 
         inTheLight();
 
@@ -237,7 +243,7 @@ public class PlayerWithAnim : MonoBehaviour
             rb.velocity = Vector2.zero;
             //canJump = true;
         }
-        Debug.Log("Collided with: " + collision.gameObject.name);
+        //Debug.Log("Collided with: " + collision.gameObject.name);
     }
 
     public void checkGround(bool isground)
