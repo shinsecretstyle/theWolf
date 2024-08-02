@@ -150,7 +150,8 @@ public class PlayerWithAnim : MonoBehaviour
         }
         else if (id == 4)//phase4
         {
-
+            Debug.Log("GameOver");
+            SceneManager.LoadScene("Gameover");
             //ゲームオーバー関数を読み込む
         }
     }

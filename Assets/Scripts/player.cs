@@ -98,6 +98,8 @@ public class player : MonoBehaviour
         {
             sr.sprite = phase4;
             updateCollider();
+            Debug.Log("GameOver");
+            SceneManager.LoadScene("Gameover");
         }
     }
 
