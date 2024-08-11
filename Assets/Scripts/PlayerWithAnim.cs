@@ -15,6 +15,7 @@ public class PlayerWithAnim : MonoBehaviour
     private float phaseDownSpeed = 0.2f;
     [SerializeField]
     private int lastDir = 1;//1は右向け、-1は左向け
+    private bool isLayDown = false;
 
     public int phaseID;
     public float speed;
@@ -41,6 +42,7 @@ public class PlayerWithAnim : MonoBehaviour
     Rigidbody2D rb;
     PolygonCollider2D polygonCollider;
     Animator animator;
+
 
     void Start()
     {
@@ -112,6 +114,17 @@ public class PlayerWithAnim : MonoBehaviour
             //ジャンプ
             rb.AddForce(new Vector2(rb.velocity.x, jumpPower * 10 * rb.mass));
             StartCoroutine(resetJumpCD());
+        }
+
+        if(Input.GetKeyDown(KeyCode.S))
+        {
+            isLayDown = true;
+            animator.SetBool("LayDown",true);
+        }
+        if(Input.GetKeyUp(KeyCode.S))
+        {
+            isLayDown = false;
+            animator.SetBool("LayDown",false);
         }
 
         inTheLight();
