@@ -439,11 +439,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7097571060459576184, guid: 4b36874868ea6cd43886ac10bed42e64, type: 3}
       propertyPath: m_Size.x
-      value: 34.879997
+      value: 11.875268
       objectReference: {fileID: 0}
     - target: {fileID: 7097571060459576184, guid: 4b36874868ea6cd43886ac10bed42e64, type: 3}
       propertyPath: m_Size.y
-      value: 25.069998
+      value: 28.85
       objectReference: {fileID: 0}
     - target: {fileID: 7840762150298832319, guid: 4b36874868ea6cd43886ac10bed42e64, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
