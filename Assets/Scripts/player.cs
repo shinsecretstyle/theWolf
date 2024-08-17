@@ -22,10 +22,11 @@ public class player : MonoBehaviour
     public bool isInLight;
     public bool isOnGround;
     public bool isOnWall;
+    private string enemyTag = "Enemy";
 
     [SerializeField]
     private bool canWallJump;
-    
+
 
     public Slider phaseSlider;
     public Sprite phase1;
@@ -53,7 +54,7 @@ public class player : MonoBehaviour
         phaseSlider.value = phaseProcess;
         float move = Input.GetAxis("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
-        rb.velocity = new Vector2(move * speed,rb.velocity.y);
+        rb.velocity = new Vector2(move * speed, rb.velocity.y);
         //
         Debug.Log(rb.velocity + "   " + move);
         //rb.velocity = new Vector2(rb.velocity.x,y*2);
@@ -69,8 +70,8 @@ public class player : MonoBehaviour
     //phaseによって属性値の設定
     private void setPhaseByID(int id)
     {
-        
-        if(id == 1)//phase1
+
+        if (id == 1)//phase1
         {
             sr.sprite = phase1;
             updateCollider();
@@ -78,7 +79,7 @@ public class player : MonoBehaviour
             rb.mass = 1;
             canWallJump = false;
         }
-        else if(id == 2)//phase2
+        else if (id == 2)//phase2
         {
             speed = 6;
             sr.sprite = phase2;
@@ -86,7 +87,7 @@ public class player : MonoBehaviour
             rb.mass = 1;
             canWallJump = true;
         }
-        else if(id == 3)//phase3
+        else if (id == 3)//phase3
         {
             sr.sprite = phase3;
             updateCollider();
@@ -94,7 +95,7 @@ public class player : MonoBehaviour
             rb.mass = 5f;
             canWallJump = false;
         }
-        else if(id == 4)//phase4
+        else if (id == 4)//phase4
         {
             sr.sprite = phase4;
             updateCollider();
@@ -136,7 +137,8 @@ public class player : MonoBehaviour
             setPhaseByID(phaseID);
             phaseProcess = 0f;
         }
-        else if (phaseProcess <= 0 && phaseID > 1) {
+        else if (phaseProcess <= 0 && phaseID > 1)
+        {
             phaseID--;
             setPhaseByID(phaseID);
             phaseProcess = phaseLimit;
@@ -173,7 +175,8 @@ public class player : MonoBehaviour
         {
             canJump = true;
             StopCoroutine(resetJumpCD());
-        }else if(canWallJump && isOnWall)
+        }
+        else if (canWallJump && isOnWall)
         {
             canJump = true;
             StopCoroutine(resetJumpCD());
@@ -183,17 +186,24 @@ public class player : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Ground")) {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
             rb.velocity = Vector2.zero;
             //canJump = true;
         }
+        #region//接触判定
+        if (collision.collider.tag == enemyTag)
+        {
+            Debug.Log("敵と接触した");
+        }
+        #endregion
     }
 
     public void checkGround(bool isground)
     {
         isOnGround = isground;
     }
-    
+
     public void checkWall(bool isWall)
     {
         isOnWall = isWall;
@@ -206,11 +216,11 @@ public class player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Moon")
+        if (collision.tag == "Moon")
         {
             isInLight = true;
         }
-        if(collision.tag == "Goal")
+        if (collision.tag == "Goal")
         {
             SceneManager.LoadScene("Goal");
         }
@@ -225,9 +235,10 @@ public class player : MonoBehaviour
 
     public void checkLight(bool inLight)
     {
-        if(inLight)
+        if (inLight)
         {
             isInLight = true;
-        }else isInLight = false;
+        }
+        else isInLight = false;
     }
 }
