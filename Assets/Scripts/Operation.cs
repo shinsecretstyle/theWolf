@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class Operation : MonoBehaviour
 {
-    private string nextSceneName = "WolfMap2(アニメーションあり)";
+    private string nextSceneName = "WolfMap2(繧｢繝九Γ繝ｼ繧ｷ繝ｧ繝ｳ縺ゅｊ)";
     private float waitTime = 5.0f;
 
     void Start()

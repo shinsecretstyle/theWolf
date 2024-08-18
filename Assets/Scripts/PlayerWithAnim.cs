@@ -115,11 +115,11 @@ public class PlayerWithAnim : MonoBehaviour
             StartCoroutine(resetJumpCD());
         }
 
-        if(Input.GetKeyDown(KeyCode.S))
+        if(Input.GetKeyDown(KeyCode.LeftControl))
         {
             animator.SetBool("LayDown",true);
         }
-        if(Input.GetKeyUp(KeyCode.S))
+        if(Input.GetKeyUp(KeyCode.LeftControl))
         {
 
             animator.SetBool("LayDown",false);
