@@ -288,6 +288,12 @@ public class PlayerWithAnim : MonoBehaviour
         {
             isInLight = true;
         }
+
+        if(collision.gameObject.CompareTag("Police")&&animator.runtimeAnimatorController == phase3)
+        {
+            Debug.Log("Police");
+            SceneManager.LoadScene("Goal");
+        }
         if (collision.tag == "Goal")
         {
             SceneManager.LoadScene("Goal");
