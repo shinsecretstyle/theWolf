@@ -302,6 +302,10 @@ public class PlayerWithAnim : MonoBehaviour
         {
             SceneManager.LoadScene("Goal");
         }
+        if (collision.tag == "Enemy")
+        {
+            SceneManager.LoadScene("EnemyScene");
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
