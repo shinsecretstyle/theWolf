@@ -296,7 +296,7 @@ public class PlayerWithAnim : MonoBehaviour
         if(collision.gameObject.CompareTag("Police")&&animator.runtimeAnimatorController == phase3)
         {
             Debug.Log("Police");
-            SceneManager.LoadScene("Goal");
+            SceneManager.LoadScene("Police CP");
         }
         if (collision.tag == "Goal")
         {
@@ -304,7 +304,7 @@ public class PlayerWithAnim : MonoBehaviour
         }
         if (collision.tag == "Enemy")
         {
-            SceneManager.LoadScene("EnemyScene");
+            SceneManager.LoadScene("Bat CP");
         }
     }
     private void OnTriggerExit2D(Collider2D collision)

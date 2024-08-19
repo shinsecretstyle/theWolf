@@ -29,4 +29,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GoalTest/Goal.unity
     guid: d9cbec22657e8fe48b1a763a1b498297
+  - enabled: 1
+    path: Assets/Scenes/Police CP.unity
+    guid: 799bd7a66f1922c49a3c802e568adc87
+  - enabled: 0
+    path: Assets/Scenes/Bat CP.unity
+    guid: 25de67aa8241faa4dafd36731ad8ebc2
   m_configObjects: {}
