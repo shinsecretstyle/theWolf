@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class OperationSkip : MonoBehaviour
 {
-    private string nextSceneName = "WolfMap2(アニメーションあり)";
+    private string nextSceneName = "WolfMap2(繧｢繝九Γ繝ｼ繧ｷ繝ｧ繝ｳ縺ゅｊ)";
 
     void Update()
     {
