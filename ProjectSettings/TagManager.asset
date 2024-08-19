@@ -9,6 +9,8 @@ TagManager:
   - Ladder
   - Goal
   - Enemy
+  - NavPoint
+  - Police
   layers:
   - Default
   - TransparentFX

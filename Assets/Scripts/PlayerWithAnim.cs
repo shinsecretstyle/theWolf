@@ -28,6 +28,7 @@ public class PlayerWithAnim : MonoBehaviour
     public bool isInLight;
     public bool isOnGround;
     public bool isOnWall;
+    public bool InvisibleWall = false;
 
     [SerializeField]
     private bool canWallJump;
@@ -151,6 +152,7 @@ public class PlayerWithAnim : MonoBehaviour
             speed = 4;
             rb.mass = 1;
             canWallJump = false;
+            InvisibleWall =false;
 
         }
         else if (id == 2)//phase2
@@ -160,6 +162,7 @@ public class PlayerWithAnim : MonoBehaviour
             speed = 6;
             rb.mass = 1;
             canWallJump = true;
+            InvisibleWall= false;
         }
         else if (id == 3)//phase3
         {
@@ -167,6 +170,7 @@ public class PlayerWithAnim : MonoBehaviour
             animator.runtimeAnimatorController = phase3;
             rb.mass = 5f;//massを増加し、車を押すことができる
             canWallJump = false;
+            InvisibleWall = true;
         }
         else if (id == 4)//phase4
         {
@@ -287,6 +291,12 @@ public class PlayerWithAnim : MonoBehaviour
         if (collision.tag == "Moon")
         {
             isInLight = true;
+        }
+
+        if(collision.gameObject.CompareTag("Police")&&animator.runtimeAnimatorController == phase3)
+        {
+            Debug.Log("Police");
+            SceneManager.LoadScene("Goal");
         }
         if (collision.tag == "Goal")
         {
