@@ -16,18 +16,21 @@ public class Enemy : MonoBehaviour
     private SpriteRenderer sr = null;
     private bool rightTleftF = false;
     #endregion
-
+    Animator animator;
+    public bool Red = false;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
 
     void FixedUpdate()
     {
         if (sr.isVisible || nonVisibleAct)
         {
+            animator.SetBool("Red", true);
             if (checkCollision.isOn)
             {
                 rightTleftF = !rightTleftF;
@@ -35,6 +38,7 @@ public class Enemy : MonoBehaviour
             int xVector = -1;
             if (rightTleftF)
             {
+                
                 xVector = 1;
                 transform.localScale = new Vector3(-1, 1, 1);
             }
