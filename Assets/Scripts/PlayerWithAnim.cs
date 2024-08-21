@@ -296,7 +296,8 @@ public class PlayerWithAnim : MonoBehaviour
         if(collision.gameObject.CompareTag("Police")&&animator.runtimeAnimatorController == phase3)
         {
             Debug.Log("Police");
-            SceneManager.LoadScene("Police CP");
+            transform.position = new Vector3(100,5,0);
+            //SceneManager.LoadScene("Police CP");
         }
         if (collision.tag == "Goal")
         {
@@ -304,7 +305,8 @@ public class PlayerWithAnim : MonoBehaviour
         }
         if (collision.tag == "Enemy")
         {
-            SceneManager.LoadScene("Bat CP");
+            //SceneManager.LoadScene("Bat CP");
+            transform.position = new Vector3(57,0,0);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
