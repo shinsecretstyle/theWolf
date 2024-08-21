@@ -301,7 +301,7 @@ public class PlayerWithAnim : MonoBehaviour
         }
         if (collision.tag == "Goal")
         {
-            SceneManager.LoadScene("Goal");
+            SceneManager.LoadScene("New ED");
         }
         if (collision.tag == "Enemy")
         {
