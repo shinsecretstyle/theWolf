@@ -29,6 +29,7 @@ public class PlayerWithAnim : MonoBehaviour
     public bool isOnGround;
     public bool isOnWall;
     public bool InvisibleWall = false;
+    public bool isBark = false;
 
     [SerializeField]
     private bool canWallJump;
@@ -152,7 +153,7 @@ public class PlayerWithAnim : MonoBehaviour
             speed = 4;
             rb.mass = 1;
             canWallJump = false;
-            InvisibleWall =false;
+            InvisibleWall = false;
 
         }
         else if (id == 2)//phase2
@@ -299,6 +300,25 @@ public class PlayerWithAnim : MonoBehaviour
             transform.position = new Vector3(100,5,0);
             //SceneManager.LoadScene("Police CP");
         }
+
+        if(collision.gameObject.CompareTag("Dog")&&animator.runtimeAnimatorController == phase1)
+        {
+            isBark = true;
+        }
+        else if(collision.gameObject.CompareTag("Dog")&&animator.runtimeAnimatorController == phase2)
+        {
+            isBark = true;
+        }
+        else if(collision.gameObject.CompareTag("Dog")&&animator.runtimeAnimatorController == phase3)
+        {
+            isBark = false;
+            Debug.Log("False");
+        }
+        else
+        {
+            isBark = false;
+        }
+        
         if (collision.tag == "Goal")
         {
             SceneManager.LoadScene("New ED");
@@ -314,6 +334,11 @@ public class PlayerWithAnim : MonoBehaviour
         if (collision.tag == "Moon")
         {
             isInLight = false;
+        }
+
+        if(collision.gameObject.CompareTag("Dog"))
+        {
+            isBark = false;
         }
     }
 
