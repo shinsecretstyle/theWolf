@@ -17,7 +17,7 @@ public class EnemyDog : MonoBehaviour
         if(Player.isBark)
         {
             animator.SetBool("Bark",true);
-            Debug.Log("Bark");
+            //Debug.Log("Bark");
         }
         else
         {

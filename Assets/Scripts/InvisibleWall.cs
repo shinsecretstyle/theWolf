@@ -17,7 +17,7 @@ public class InvisibleWall : MonoBehaviour
         if(Player.InvisibleWall)
         {
             boxCollider.isTrigger=true;
-            Debug.Log("InvisibleWall");
+            //Debug.Log("InvisibleWall");
         }
         else
         {
