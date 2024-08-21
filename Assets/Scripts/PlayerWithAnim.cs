@@ -172,6 +172,7 @@ public class PlayerWithAnim : MonoBehaviour
             rb.mass = 5f;//massを増加し、車を押すことができる
             canWallJump = false;
             InvisibleWall = true;
+            isBark = false;
         }
         else if (id == 4)//phase4
         {
