@@ -28,7 +28,7 @@ public class Enemy : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (sr.isVisible || nonVisibleAct)
+        if (sr.isVisible)
         {
             animator.SetBool("Red", true);
             if (checkCollision.isOn)
@@ -38,7 +38,7 @@ public class Enemy : MonoBehaviour
             int xVector = -1;
             if (rightTleftF)
             {
-                
+
                 xVector = 1;
                 transform.localScale = new Vector3(-1, 1, 1);
             }
@@ -48,5 +48,10 @@ public class Enemy : MonoBehaviour
             }
             rb.velocity = new Vector2(xVector * speed, -gravity);
         }
+        else
+        {
+            animator.SetBool("Red", false);
+        }
+
     }
 }

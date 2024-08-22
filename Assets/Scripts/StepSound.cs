@@ -16,7 +16,10 @@ public class StepSound : MonoBehaviour
     public AudioClip phase2jumpright;
     public AudioClip phase3left;
     public AudioClip phase3right;
-    
+    public AudioClip laydownmove;
+    public AudioClip laydown;
+    public AudioClip crouch;
+
 
     private void Start()
     {
@@ -64,5 +67,20 @@ public class StepSound : MonoBehaviour
     public void phase3Right()
     {
         AS.PlayOneShot(phase3right);
+    }
+
+    public void Laydownmove()
+    {
+        AS.PlayOneShot(laydownmove);
+    }
+
+    public void Laydown()
+    {
+        AS.PlayOneShot(laydown);
+    }
+
+    public void Crouch()
+    {
+        AS.PlayOneShot(crouch);
     }
 }
