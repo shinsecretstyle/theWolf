@@ -58,6 +58,7 @@ public class PlayerWithAnim : MonoBehaviour
         animator = GetComponent<Animator>();
         speed = 4;
         jumpPower = 41;
+        rb.mass = 1f;
         animator.SetFloat("Phase1", 1f);
         //SoundManager.Instance.PlayBGM(BGMSoundData.BGM.BGM);
     }
@@ -151,7 +152,7 @@ public class PlayerWithAnim : MonoBehaviour
             phaseProcess = 0f;
             animator.runtimeAnimatorController = phase1;
             speed = 4;
-            rb.mass = 1;
+            rb.mass = 1f;
             canWallJump = false;
             InvisibleWall = false;
 
@@ -161,7 +162,7 @@ public class PlayerWithAnim : MonoBehaviour
             phaseProcess = 0f;
             animator.runtimeAnimatorController = phase2;
             speed = 6;
-            rb.mass = 1;
+            rb.mass = 1f;
             canWallJump = true;
             InvisibleWall= false;
         }
