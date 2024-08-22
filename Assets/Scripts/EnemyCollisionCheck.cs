@@ -9,14 +9,13 @@ public class EnemyCollisionCheck : MonoBehaviour
     /// </summary>
     [HideInInspector] public bool isOn = false;
 
-    private string groundTag = "Ground";
-    private string enemyTag = "Enemy";
 
+    private string enemyTag = "Enemy";
 
     #region//ê⁄êGîªíË
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == groundTag || collision.tag == enemyTag)
+        if (collision.tag ==  enemyTag)
         {
             isOn = true;
         }
@@ -24,7 +23,7 @@ public class EnemyCollisionCheck : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == groundTag || collision.tag == enemyTag)
+        if (collision.tag ==  enemyTag)
         {
             isOn = false;
         }

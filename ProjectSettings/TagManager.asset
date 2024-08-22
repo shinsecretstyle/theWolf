@@ -12,6 +12,7 @@ TagManager:
   - NavPoint
   - Police
   - Dog
+  - Break
   layers:
   - Default
   - TransparentFX

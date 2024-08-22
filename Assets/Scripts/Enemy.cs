@@ -52,6 +52,5 @@ public class Enemy : MonoBehaviour
         {
             animator.SetBool("Red", false);
         }
-
     }
 }
