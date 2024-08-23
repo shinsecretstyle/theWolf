@@ -30,6 +30,7 @@ public class PlayerWithAnim : MonoBehaviour
     public bool isOnWall;
     public bool InvisibleWall = false;
     public bool isBark = false;
+    public bool Ladder = false;
 
     [SerializeField]
     private bool canWallJump;
@@ -135,6 +136,22 @@ public class PlayerWithAnim : MonoBehaviour
         if(Input.GetKeyUp(KeyCode.LeftShift))
         {
             animator.SetBool("Crouch",false);
+        }
+        if(Input.GetKeyDown(KeyCode.W))
+        {
+            animator.SetBool("Ladder",true);
+        }
+        if(Input.GetKeyUp(KeyCode.W))
+        {
+            animator.SetBool("Ladder",false);
+        }
+        if(Input.GetKeyDown(KeyCode.S))
+        {
+            animator.SetBool("Ladder",true);
+        }
+        if(Input.GetKeyUp(KeyCode.S))
+        {
+            animator.SetBool("Ladder",false);
         }
 
         inTheLight();
@@ -296,6 +313,11 @@ public class PlayerWithAnim : MonoBehaviour
             isInLight = true;
         }
 
+        if(collision.gameObject.CompareTag("Ladder"))
+        {
+            animator.SetBool("LadderMove",true);
+        }
+
         if(collision.gameObject.CompareTag("Police")&&animator.runtimeAnimatorController == phase3)
         {
             Debug.Log("Police");
@@ -341,6 +363,11 @@ public class PlayerWithAnim : MonoBehaviour
         if(collision.gameObject.CompareTag("Dog"))
         {
             isBark = false;
+        }
+
+        if(collision.gameObject.CompareTag("Ladder"))
+        {
+            animator.SetBool("LadderMove",false);
         }
     }
 
