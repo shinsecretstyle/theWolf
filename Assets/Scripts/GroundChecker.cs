@@ -5,28 +5,28 @@ using UnityEngine;
 public class GroundChecker : MonoBehaviour
 {
     public int phaseId;
-    player player;
+    PlayerWithAnim player;
     
     private void Start()
     {
-        player = GetComponentInParent<player>();
+        player = GetComponentInParent<PlayerWithAnim>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground") && player.phaseProcess == phaseId)
+        if (collision.gameObject.CompareTag("Ground"))
         {
             player.checkGround(true);
-            Debug.Log("ground enter");
+            //Debug.Log("ground enter");
 
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground") && player.phaseProcess == phaseId)
+        if (collision.gameObject.CompareTag("Ground"))
         {
             player.checkGround(false);
-            Debug.Log("ground exit");
+            //Debug.Log("ground exit");
 
         }
     }

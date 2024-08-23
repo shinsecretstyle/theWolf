@@ -107,6 +107,8 @@ public class PlayerWithAnim : MonoBehaviour
             //SoundManager.Instance.PlaySE(SESoundData.SE.Jump);
             //ジャンプの高さを維持するため、mass掛け算
             animator.SetTrigger("Jump");
+            groundChecker.SetActive(false);
+            StartCoroutine(resetGroundChecker());
             Debug.Log("Jump");
 
             //空中二段ジャンプの高さを修正ためのコード
@@ -116,7 +118,7 @@ public class PlayerWithAnim : MonoBehaviour
 
             //ジャンプ
             rb.AddForce(new Vector2(rb.velocity.x, jumpPower * 10 * rb.mass));
-            StartCoroutine(resetJumpCD());
+            //StartCoroutine(resetJumpCD());
         }
 
         if(Input.GetKey(KeyCode.LeftShift))
@@ -156,8 +158,21 @@ public class PlayerWithAnim : MonoBehaviour
 
         inTheLight();
 
+        if (!canJump)
+        {
+            groundCheck();
+        }
     }
 
+
+    private void groundCheck()
+    {
+        if (isOnGround)
+        {
+            canJump = true;
+            animator.SetTrigger("JumpOver");
+        }
+    }
 
 
     //phaseによって属性値の設定
@@ -249,6 +264,7 @@ public class PlayerWithAnim : MonoBehaviour
     {
         groundChecker.SetActive(false);
         yield return new WaitForSeconds(0.3f);
+        
         groundChecker.SetActive(true);
     }
 
