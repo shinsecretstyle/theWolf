@@ -129,7 +129,7 @@ public class PlayerWithAnim : MonoBehaviour
             animator.SetBool("LayDown",false);
         }
 
-        if(Input.GetKeyDown(KeyCode.LeftShift))
+        if(Input.GetKey(KeyCode.LeftShift))
         {
             animator.SetBool("Crouch",true);
         }
@@ -137,7 +137,7 @@ public class PlayerWithAnim : MonoBehaviour
         {
             animator.SetBool("Crouch",false);
         }
-        if(Input.GetKeyDown(KeyCode.W))
+        if(Input.GetKey(KeyCode.W))
         {
             animator.SetBool("Ladder",true);
         }
@@ -145,7 +145,7 @@ public class PlayerWithAnim : MonoBehaviour
         {
             animator.SetBool("Ladder",false);
         }
-        if(Input.GetKeyDown(KeyCode.S))
+        if(Input.GetKey(KeyCode.S))
         {
             animator.SetBool("Ladder",true);
         }
@@ -315,7 +315,7 @@ public class PlayerWithAnim : MonoBehaviour
 
         if(collision.gameObject.CompareTag("Ladder"))
         {
-            animator.SetBool("LadderMove",true);
+            //animator.SetBool("LadderMove",true);
         }
 
         if(collision.gameObject.CompareTag("Police")&&animator.runtimeAnimatorController == phase3)
@@ -353,6 +353,15 @@ public class PlayerWithAnim : MonoBehaviour
             transform.position = new Vector3(57,0,0);
         }
     }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+         if(collision.gameObject.CompareTag("Ladder"))
+        {
+            animator.SetBool("LadderMove",true);
+        }
+    }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.tag == "Moon")
