@@ -119,17 +119,17 @@ public class PlayerWithAnim : MonoBehaviour
             StartCoroutine(resetJumpCD());
         }
 
-        if(Input.GetKeyDown(KeyCode.LeftControl))
+        if(Input.GetKey(KeyCode.LeftShift))
         {
             animator.SetBool("LayDown",true);
         }
-        if(Input.GetKeyUp(KeyCode.LeftControl))
+        if(Input.GetKeyUp(KeyCode.LeftShift))
         {
 
             animator.SetBool("LayDown",false);
         }
 
-        if(Input.GetKey(KeyCode.LeftShift))
+        if(Input.GetKeyDown(KeyCode.LeftShift))
         {
             animator.SetBool("Crouch",true);
         }
