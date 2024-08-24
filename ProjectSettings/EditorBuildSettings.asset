@@ -19,7 +19,7 @@ EditorBuildSettings:
     guid: 035aafba51b7924448726b3469c9091f
   - enabled: 1
     path: "Assets/Scenes/WolfMap2(\u30A2\u30CB\u30E1\u30FC\u30B7\u30E7\u30F3\u3042\u308A).unity"
-    guid: 6c971f0c0f9dbf74b9ff0d2b3aafac20
+    guid: 93770e375ebbeba498c581cc2ec619d0
   - enabled: 0
     path: Assets/Scenes/EnemyScene.unity
     guid: 0c25a4a12504f6b41ad69c8e0e9f3d6d
@@ -32,10 +32,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/GoalTest/Goal.unity
     guid: d9cbec22657e8fe48b1a763a1b498297
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Police CP.unity
     guid: 799bd7a66f1922c49a3c802e568adc87
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Bat CP.unity
     guid: 6763ee112647847489fb2c9a578be5b1
   m_configObjects: {}
