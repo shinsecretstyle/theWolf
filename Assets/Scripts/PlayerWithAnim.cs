@@ -28,6 +28,7 @@ public class PlayerWithAnim : MonoBehaviour
     public bool isInLight;
     public bool isOnGround;
     public bool isOnWall;
+    public bool isMirror;
     public bool InvisibleWall = false;
     public bool isBark = false;
     public bool Ladder = false;
@@ -238,6 +239,10 @@ public class PlayerWithAnim : MonoBehaviour
         if (isInLight)
         {
             phaseProcess += Time.deltaTime * phaseUpSpeed;//フェーズの増加スピード掛け算
+            if(isMirror)
+            {
+                phaseProcess += Time.deltaTime * phaseUpSpeed*1;
+            }
 
         }
         else if (!isInLight && phaseProcess > 0f)
@@ -331,6 +336,11 @@ public class PlayerWithAnim : MonoBehaviour
         if (collision.tag == "Moon")
         {
             isInLight = true;
+        }
+        if (collision.tag == "Mirror")
+        {
+            Debug.Log("Mirror");
+            isMirror = true;
         }
 
         if(collision.gameObject.CompareTag("Ladder"))
@@ -432,6 +442,11 @@ public class PlayerWithAnim : MonoBehaviour
         if(collision.gameObject.CompareTag("Ladder"))
         {
             animator.SetBool("LadderMove",false);
+        }
+        if (collision.tag == "Mirror")
+        {
+            Debug.Log("MirrorOut");
+            isMirror = false;
         }
     }
 
