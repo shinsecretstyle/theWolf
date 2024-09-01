@@ -60,7 +60,7 @@ public class PlayerWithAnim : MonoBehaviour
         polygonCollider = GetComponent<PolygonCollider2D>();
         animator = GetComponent<Animator>();
         speed = 4;
-        jumpPower = 32;
+        jumpPower = 35;
         rb.mass = 1f;
         animator.SetFloat("Phase1", 1f);
         //SoundManager.Instance.PlayBGM(BGMSoundData.BGM.BGM);
