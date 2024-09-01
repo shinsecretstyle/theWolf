@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7260429789596483332}
   - component: {fileID: 6035895503522268709}
   - component: {fileID: 6029317910578952443}
+  - component: {fileID: 5099244734641697788}
   m_Layer: 0
   m_Name: enemy_walk1-2 (3)
   m_TagString: Enemy
@@ -221,11 +222,11 @@ AudioSource:
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 2.18
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 10
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -258,7 +259,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -273,7 +274,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -312,6 +313,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   voice: {fileID: 0}
   move: {fileID: 8300000, guid: 3378df6633c81ba448249d53e4f17be2, type: 3}
+--- !u!81 &5099244734641697788
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2339653613951527010}
+  m_Enabled: 1
 --- !u!1 &2406885591781521310
 GameObject:
   m_ObjectHideFlags: 0
