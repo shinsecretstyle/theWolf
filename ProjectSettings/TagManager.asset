@@ -13,6 +13,7 @@ TagManager:
   - Police
   - Dog
   - Break
+  - PoliceArea
   layers:
   - Default
   - TransparentFX

@@ -31,6 +31,7 @@ public class PlayerWithAnim : MonoBehaviour
     public bool InvisibleWall = false;
     public bool isBark = false;
     public bool Ladder = false;
+    public bool isPoliceArea = false;
 
     [SerializeField]
     private bool canWallJump;
@@ -58,7 +59,7 @@ public class PlayerWithAnim : MonoBehaviour
         polygonCollider = GetComponent<PolygonCollider2D>();
         animator = GetComponent<Animator>();
         speed = 4;
-        jumpPower = 41;
+        jumpPower = 32;
         rb.mass = 1f;
         animator.SetFloat("Phase1", 1f);
         //SoundManager.Instance.PlayBGM(BGMSoundData.BGM.BGM);
@@ -187,6 +188,7 @@ public class PlayerWithAnim : MonoBehaviour
             rb.mass = 1f;
             canWallJump = false;
             InvisibleWall = false;
+            jumpPower = 32;
 
         }
         else if (id == 2)//phase2
@@ -197,6 +199,7 @@ public class PlayerWithAnim : MonoBehaviour
             rb.mass = 1f;
             canWallJump = true;
             InvisibleWall= false;
+            jumpPower = 32;
         }
         else if (id == 3)//phase3
         {
@@ -206,6 +209,7 @@ public class PlayerWithAnim : MonoBehaviour
             canWallJump = false;
             InvisibleWall = true;
             isBark = false;
+            jumpPower = 41;
         }
         else if (id == 4)//phase4
         {
@@ -358,7 +362,24 @@ public class PlayerWithAnim : MonoBehaviour
         {
             isBark = false;
         }
-        
+
+        /*if(collision.gameObject.CompareTag("PoliceArea")&&animator.runtimeAnimatorController == phase1)
+        {
+            isPoliceArea = false;
+        }
+        else if(collision.gameObject.CompareTag("PoliceArea")&&animator.runtimeAnimatorController == phase2)
+        {
+            isPoliceArea = false;
+        }
+        else if(collision.gameObject.CompareTag("PoliceArea")&&animator.runtimeAnimatorController == phase3)
+        {
+            isPoliceArea = true;
+        }
+        /*else
+        {
+            isPoliceArea = false;
+        }
+        */
         if (collision.tag == "Goal")
         {
             SceneManager.LoadScene("New ED");
@@ -376,6 +397,20 @@ public class PlayerWithAnim : MonoBehaviour
         {
             animator.SetBool("LadderMove",true);
         }
+
+        if(collision.gameObject.CompareTag("PoliceArea")&&animator.runtimeAnimatorController == phase1)
+        {
+            isPoliceArea = false;
+        }
+        else if(collision.gameObject.CompareTag("PoliceArea")&&animator.runtimeAnimatorController == phase2)
+        {
+            isPoliceArea = false;
+        }
+        else if(collision.gameObject.CompareTag("PoliceArea")&&animator.runtimeAnimatorController == phase3)
+        {
+            isPoliceArea = true;
+        }
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -388,6 +423,10 @@ public class PlayerWithAnim : MonoBehaviour
         if(collision.gameObject.CompareTag("Dog"))
         {
             isBark = false;
+        }
+        if(collision.gameObject.CompareTag("PoliceArea"))
+        {
+            isPoliceArea = false;
         }
 
         if(collision.gameObject.CompareTag("Ladder"))
