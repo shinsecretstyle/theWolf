@@ -188,7 +188,7 @@ public class PlayerWithAnim : MonoBehaviour
             rb.mass = 1f;
             canWallJump = false;
             InvisibleWall = false;
-            jumpPower = 32;
+            jumpPower = 35;
 
         }
         else if (id == 2)//phase2
@@ -199,7 +199,7 @@ public class PlayerWithAnim : MonoBehaviour
             rb.mass = 1f;
             canWallJump = true;
             InvisibleWall= false;
-            jumpPower = 32;
+            jumpPower = 35;
         }
         else if (id == 3)//phase3
         {
