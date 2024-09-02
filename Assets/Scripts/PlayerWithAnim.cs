@@ -32,6 +32,7 @@ public class PlayerWithAnim : MonoBehaviour
     public bool InvisibleWall = false;
     public bool isBark = false;
     public bool Ladder = false;
+    public bool isCapture = false;
     public bool isPoliceArea = false;
 
     [SerializeField]
@@ -124,6 +125,7 @@ public class PlayerWithAnim : MonoBehaviour
         }
 
         if(Input.GetKey(KeyCode.LeftShift))
+        //しゃがみアニメーション
         {
             animator.SetBool("LayDown",true);
         }
@@ -185,6 +187,7 @@ public class PlayerWithAnim : MonoBehaviour
         {
             phaseProcess = 0f;
             animator.runtimeAnimatorController = phase1;
+            transform.localScale = new Vector3(0.1f,0.1f,0.1f);
             speed = 4;
             rb.mass = 1f;
             canWallJump = false;
@@ -196,6 +199,7 @@ public class PlayerWithAnim : MonoBehaviour
         {
             phaseProcess = 0f;
             animator.runtimeAnimatorController = phase2;
+            transform.localScale = new Vector3(0.1f,0.1f,0.1f);
             speed = 6;
             rb.mass = 1f;
             canWallJump = true;
@@ -206,6 +210,7 @@ public class PlayerWithAnim : MonoBehaviour
         {
             phaseProcess = 0f;
             animator.runtimeAnimatorController = phase3;
+            transform.localScale = new Vector3(0.13f,0.13f,0.13f);
             rb.mass = 5f;//massを増加し、車を押すことができる
             canWallJump = false;
             InvisibleWall = true;
@@ -240,6 +245,7 @@ public class PlayerWithAnim : MonoBehaviour
         {
             phaseProcess += Time.deltaTime * phaseUpSpeed;//フェーズの増加スピード掛け算
             if(isMirror)
+            //ミラーの光に触れているとき
             {
                 phaseProcess += Time.deltaTime * phaseUpSpeed*1;
             }
@@ -338,6 +344,7 @@ public class PlayerWithAnim : MonoBehaviour
             isInLight = true;
         }
         if (collision.tag == "Mirror")
+        //カーブミラーに触れたとき
         {
             Debug.Log("Mirror");
             isMirror = true;
@@ -349,13 +356,25 @@ public class PlayerWithAnim : MonoBehaviour
         }
 
         if(collision.gameObject.CompareTag("Police")&&animator.runtimeAnimatorController == phase3)
+        //フェーズ3で警察の前を通った時
         {
-            Debug.Log("Police");
             transform.position = new Vector3(100,5,0);
+            transform.localScale = new Vector3(0.1f,0.1f,0.1f);
+            phaseID =1;
+            phaseProcess =0f;
+            animator.runtimeAnimatorController = phase1;
+            speed =0;
+            rb.mass =1f;
+            canWallJump =false;
+            InvisibleWall =false;
+            jumpPower =0;
+            Debug.Log("Police");
+            StartCoroutine(ResetSpeedjumpPower());
             //SceneManager.LoadScene("Police CP");
         }
 
         if(collision.gameObject.CompareTag("Dog")&&animator.runtimeAnimatorController == phase1)
+        //番犬アニメーション
         {
             isBark = true;
         }
@@ -373,23 +392,6 @@ public class PlayerWithAnim : MonoBehaviour
             isBark = false;
         }
 
-        /*if(collision.gameObject.CompareTag("PoliceArea")&&animator.runtimeAnimatorController == phase1)
-        {
-            isPoliceArea = false;
-        }
-        else if(collision.gameObject.CompareTag("PoliceArea")&&animator.runtimeAnimatorController == phase2)
-        {
-            isPoliceArea = false;
-        }
-        else if(collision.gameObject.CompareTag("PoliceArea")&&animator.runtimeAnimatorController == phase3)
-        {
-            isPoliceArea = true;
-        }
-        /*else
-        {
-            isPoliceArea = false;
-        }
-        */
         if (collision.tag == "Goal")
         {
             SceneManager.LoadScene("New ED");
@@ -401,14 +403,26 @@ public class PlayerWithAnim : MonoBehaviour
         }
     }
 
+    IEnumerator ResetSpeedjumpPower()
+    //警察に捕まった後の動作
+    {
+        animator.SetBool("isCapture",true);
+        yield return new WaitForSeconds(5f);//五秒後
+        animator.SetBool("isCapture",false);
+        speed=4;
+        jumpPower=35;
+    }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
          if(collision.gameObject.CompareTag("Ladder"))
+         //はしごアニメーション
         {
             animator.SetBool("LadderMove",true);
         }
 
         if(collision.gameObject.CompareTag("PoliceArea")&&animator.runtimeAnimatorController == phase1)
+        //警察にアニメーション
         {
             isPoliceArea = false;
         }
@@ -430,7 +444,7 @@ public class PlayerWithAnim : MonoBehaviour
             isInLight = false;
         }
 
-        if(collision.gameObject.CompareTag("Dog"))
+        if(collision.gameObject.CompareTag("Dog"))//番犬アニメーション
         {
             isBark = false;
         }
@@ -444,6 +458,7 @@ public class PlayerWithAnim : MonoBehaviour
             animator.SetBool("LadderMove",false);
         }
         if (collision.tag == "Mirror")
+        //カーブミラー
         {
             Debug.Log("MirrorOut");
             isMirror = false;
