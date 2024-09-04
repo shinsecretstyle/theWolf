@@ -19,7 +19,9 @@ public class StepSound : MonoBehaviour
     public AudioClip laydownmove;
     public AudioClip laydown;
     public AudioClip crouch;
-
+    public AudioClip phase1Ladder;
+    public AudioClip phase2Ladder;
+    public AudioClip phase3Ladder;
 
     private void Start()
     {
@@ -44,7 +46,7 @@ public class StepSound : MonoBehaviour
         AS.PlayOneShot(phase1jumpright);
     }
 
-    public void phase2Left() 
+    public void phase2Left()
     {
         AS.PlayOneShot(phase2left);
     }
@@ -52,11 +54,11 @@ public class StepSound : MonoBehaviour
     {
         AS.PlayOneShot(phase2right);
     }
-    public void phase2jumpLeft() 
+    public void phase2jumpLeft()
     {
         AS.PlayOneShot(phase2jumpleft);
     }
-    public void phase2jumpRight() 
+    public void phase2jumpRight()
     {
         AS.PlayOneShot(phase2jumpright);
     }
@@ -82,5 +84,20 @@ public class StepSound : MonoBehaviour
     public void Crouch()
     {
         AS.PlayOneShot(crouch);
+    }
+
+    public void Phase1Ladder()
+    {
+        AS.PlayOneShot(phase1Ladder);
+    }
+
+    public void Phase2Ladder()
+    {
+        AS.PlayOneShot(phase2Ladder);
+    }
+
+    public void Phase3Ladder()
+    {
+        AS.PlayOneShot(phase3Ladder);
     }
 }
