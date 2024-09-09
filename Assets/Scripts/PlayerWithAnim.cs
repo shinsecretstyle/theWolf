@@ -34,6 +34,7 @@ public class PlayerWithAnim : MonoBehaviour
     public bool Ladder = false;
     public bool isCapture = false;
     public bool isPoliceArea = false;
+    public bool isLayDown = false;
 
     [SerializeField]
     private bool canWallJump;
@@ -135,11 +136,11 @@ public class PlayerWithAnim : MonoBehaviour
             animator.SetBool("LayDown",false);
         }
 
-        if(Input.GetKeyDown(KeyCode.LeftShift))
+        if(Input.GetKeyDown(KeyCode.LeftShift)&&!isLayDown)
         {
             animator.SetBool("Crouch",true);
         }
-        if(Input.GetKeyUp(KeyCode.LeftShift))
+        if(Input.GetKeyUp(KeyCode.LeftShift)&&!isLayDown)
         {
             animator.SetBool("Crouch",false);
         }
@@ -350,6 +351,14 @@ public class PlayerWithAnim : MonoBehaviour
             isMirror = true;
         }
 
+        /*if(collision.gameObject.CompareTag("LayDown"))
+        {
+            animator.SetBool("Crouch",true);
+            animator.SetBool("LayDown",false);
+        }
+        */
+
+
         if(collision.gameObject.CompareTag("Ladder"))
         {
             //animator.SetBool("LadderMove",true);
@@ -421,6 +430,13 @@ public class PlayerWithAnim : MonoBehaviour
             animator.SetBool("LadderMove",true);
         }
 
+        if(collision.gameObject.CompareTag("LayDown"))
+        {
+            animator.SetBool("LayDown",true);
+            isLayDown = true;
+            //animator.SetBool("Crouch",false);
+        }
+
         if(collision.gameObject.CompareTag("PoliceArea")&&animator.runtimeAnimatorController == phase1)
         //警察にアニメーション
         {
@@ -442,6 +458,14 @@ public class PlayerWithAnim : MonoBehaviour
         if (collision.tag == "Moon")
         {
             isInLight = false;
+        }
+
+        if(collision.gameObject.CompareTag("LayDown"))
+        {
+            animator.SetBool("LayDown",false);
+            animator.SetBool("Crouch",false);
+
+            isLayDown = false;
         }
 
         if(collision.gameObject.CompareTag("Dog"))//番犬アニメーション
