@@ -211,7 +211,7 @@ public class PlayerWithAnim : MonoBehaviour
             phaseProcess = 0f;
             animator.runtimeAnimatorController = phase3;
             transform.localScale = new Vector3(0.13f,0.13f,0.13f);
-            rb.mass = 5f;//massを増加し、車を押すことができる
+            rb.mass = 120f;//massを増加し、車を押すことができる
             canWallJump = false;
             InvisibleWall = true;
             isBark = false;
