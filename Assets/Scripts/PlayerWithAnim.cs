@@ -35,6 +35,7 @@ public class PlayerWithAnim : MonoBehaviour
     public bool isCapture = false;
     public bool isPoliceArea = false;
     public bool isLayDown = false;
+    public bool isPush = false;
 
     [SerializeField]
     private bool canWallJump;
@@ -194,6 +195,7 @@ public class PlayerWithAnim : MonoBehaviour
             canWallJump = false;
             InvisibleWall = false;
             jumpPower = 35;
+            isPush = false;
 
         }
         else if (id == 2)//phase2
@@ -206,6 +208,7 @@ public class PlayerWithAnim : MonoBehaviour
             canWallJump = true;
             InvisibleWall= false;
             jumpPower = 35;
+            isPush = false;
         }
         else if (id == 3)//phase3
         {
@@ -217,6 +220,7 @@ public class PlayerWithAnim : MonoBehaviour
             InvisibleWall = true;
             isBark = false;
             jumpPower = 41;
+            isPush = true;
         }
         else if (id == 4)//phase4
         {
@@ -376,6 +380,7 @@ public class PlayerWithAnim : MonoBehaviour
             rb.mass =1f;
             canWallJump =false;
             InvisibleWall =false;
+            isPush = false;
             jumpPower =0;
             Debug.Log("Police");
             StartCoroutine(ResetSpeedjumpPower());
