@@ -17,6 +17,7 @@ public class PlayerWithAnim : MonoBehaviour
     private int lastDir = 1;//1は右向け、-1は左向け
 
     public int phaseID;
+    private int frameCount = 0;
     public float speed;
     public float jumpPower;
     public float jumpCD = 1f;
@@ -36,6 +37,10 @@ public class PlayerWithAnim : MonoBehaviour
     public bool isPoliceArea = false;
     public bool isLayDown = false;
     public bool isPush = false;
+    float seconds;
+
+    [Header("FadeManager")] public FadeManager fade;
+
 
     [SerializeField]
     private bool canWallJump;
@@ -371,6 +376,7 @@ public class PlayerWithAnim : MonoBehaviour
         if(collision.gameObject.CompareTag("Police")&&animator.runtimeAnimatorController == phase3)
         //フェーズ3で警察の前を通った時
         {
+            fade.StartFadeIn();
             transform.position = new Vector3(100,5,0);
             transform.localScale = new Vector3(0.1f,0.1f,0.1f);
             phaseID =1;
@@ -384,6 +390,7 @@ public class PlayerWithAnim : MonoBehaviour
             jumpPower =0;
             Debug.Log("Police");
             StartCoroutine(ResetSpeedjumpPower());
+
             //SceneManager.LoadScene("Police CP");
         }
 
@@ -412,7 +419,7 @@ public class PlayerWithAnim : MonoBehaviour
         }
         if (collision.tag == "Enemy")
         {
-            //SceneManager.LoadScene("Bat CP");
+            fade.StartFadeIn();
             transform.position = new Vector3(57,0,0);
         }
     }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class FadeImage : MonoBehaviour
+public class FadeManager : MonoBehaviour
 {
     [Header("最初からフェードインが完了しているかどうか")] public bool firstFadeInComp;
     private Image img = null;
