@@ -17,7 +17,6 @@ public class PlayerWithAnim : MonoBehaviour
     private int lastDir = 1;//1は右向け、-1は左向け
 
     public int phaseID;
-    private int frameCount = 0;
     public float speed;
     public float jumpPower;
     public float jumpCD = 1f;

@@ -28,16 +28,9 @@ public class FadeManager : MonoBehaviour
         img.raycastTarget = true;
         if (frameCount > 100)
         {
-            if (fadeIn)
-            {
-                return;
-                if (timer < 4f)
-                {
-                    img.color = new Color(1, 1, 1, 1 - timer);
-                    img.fillAmount = 6 - timer;
-                }
-                timer += Time.deltaTime;
-            }
+            img.color = new Color(1, 1, 1, 1 - timer);
+            img.fillAmount = 6 - timer;
+            timer += Time.deltaTime;
             ++frameCount;
         }
     }
