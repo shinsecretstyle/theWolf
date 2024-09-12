@@ -4,24 +4,27 @@ using UnityEngine;
 
 public class DogSound : MonoBehaviour
 {
+    // Start is called before the first frame update
     AudioSource AS;
-
-    public AudioClip speak;
     public AudioClip sleep;
-
-
-    private void Start()
+    public AudioClip speak;
+    void Start()
     {
         AS = GetComponent<AudioSource>();
     }
 
-    public void Speak()
+    // Update is called once per frame
+    void Update()
     {
-        AS.PlayOneShot(speak);
+        
     }
 
     public void Sleep()
     {
         AS.PlayOneShot(sleep);
+    }
+    public void Speak()
+    {
+        AS.PlayOneShot(speak);
     }
 }

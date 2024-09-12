@@ -32,11 +32,15 @@ public class PlayerWithAnim : MonoBehaviour
     public bool isMirror;
     public bool InvisibleWall = false;
     public bool isBark = false;
+    public bool isSleep = false;
+    public bool isSleep0;
     public bool Ladder = false;
     public bool isCapture = false;
     public bool isPoliceArea = false;
     public bool isLayDown = false;
     public bool isPush = false;
+    public bool Dognear;
+    public bool Dogfar;
     float seconds;
 
     [Header("FadeManager")] public FadeManager fade;
@@ -71,6 +75,9 @@ public class PlayerWithAnim : MonoBehaviour
         jumpPower = 35;
         rb.mass = 1f;
         animator.SetFloat("Phase1", 1f);
+        GameObject obj1 = GameObject.Find("Player");
+        GameObject obj2 = GameObject.Find("Enemy Dog");
+        isSleep0 =true;
         //SoundManager.Instance.PlayBGM(BGMSoundData.BGM.BGM);
     }
 
@@ -81,6 +88,10 @@ public class PlayerWithAnim : MonoBehaviour
         float move = Input.GetAxis("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
         rb.velocity = new Vector2(move * speed, rb.velocity.y);
+        GameObject obj1 = GameObject.Find("Player");
+        GameObject obj2 = GameObject.Find("Enemy Dog");
+        float distance = Vector3.Distance(obj1.transform.position,obj2.transform.position);
+        //Debug.Log("Distance between Object1 and Object2:" + distance);
         
         if (move > 0)//右向け移動
         {
@@ -173,6 +184,51 @@ public class PlayerWithAnim : MonoBehaviour
         {
             groundCheck();
         }
+
+        if(distance<10)
+        {
+            Debug.Log("10以下");
+            Dognear = true;
+            Dogfar = false;
+            isSleep0 = true;
+        }
+        else if(distance >10)
+        {
+            Debug.Log("10以上");
+            Dogfar = true;
+            Dognear = false;
+            isSleep0 = false;
+            isSleep = true;
+        }
+
+        if(Dognear && animator.runtimeAnimatorController == phase1)
+        {
+            Debug.Log("吠える犬アニメーション");
+            isBark = true;
+            isSleep0 = false;
+            isSleep = false;
+        }
+        else if(Dognear && animator.runtimeAnimatorController == phase2)
+        {
+            Debug.Log("吠える犬アニメーション");
+            isBark = true;
+            isSleep0 = false;
+            isSleep = false;
+        }
+        else if(Dognear && animator.runtimeAnimatorController == phase3)
+        {
+            Debug.Log("寝る犬アニメーション");
+            isSleep = true;
+            isBark = false;
+            isSleep0 = false;
+        }
+        else
+        {
+            isBark = false;
+            isSleep0 = true;
+        }
+
+
     }
 
 
@@ -234,6 +290,7 @@ public class PlayerWithAnim : MonoBehaviour
             //ゲームオーバー関数を読み込む
         }
     }
+
 
     //phaseによってCollierを更新する
     private void updateCollider()
@@ -347,6 +404,7 @@ public class PlayerWithAnim : MonoBehaviour
         canJump = true;
     }
 
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Moon")
@@ -397,20 +455,20 @@ public class PlayerWithAnim : MonoBehaviour
         if(collision.gameObject.CompareTag("Dog")&&animator.runtimeAnimatorController == phase1)
         //番犬アニメーション
         {
-            isBark = true;
+            //isBark = true;
         }
         else if(collision.gameObject.CompareTag("Dog")&&animator.runtimeAnimatorController == phase2)
         {
-            isBark = true;
+            //isBark = true;
         }
         else if(collision.gameObject.CompareTag("Dog")&&animator.runtimeAnimatorController == phase3)
         {
-            isBark = false;
+            //isBark = false;
             Debug.Log("False");
         }
         else
         {
-            isBark = false;
+            //isBark = false;
         }
 
         if (collision.tag == "Goal")
