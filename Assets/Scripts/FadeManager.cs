@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class FadeManager : MonoBehaviour
 {
     [Header("最初からフェードインが完了しているかどうか")] public bool firstFadeInComp;
+    [SerializeField] private float _fadeTime;
     private Image img = null;
     private int frameCount = 0;
     private float timer = 0.0f;
@@ -21,16 +22,24 @@ public class FadeManager : MonoBehaviour
 
     public void StartFadeIn()
     {
-        if (fadeIn || fadeOut)
-        {
-            return;
-        }
         fadeIn = true;
         compFadeIn = false;
-        timer = 0.0f;
-        img.color = new Color(1, 1, 1, 1);
-        img.fillAmount = 1;
+        timer = -0.5f;
         img.raycastTarget = true;
+        if (frameCount > 100)
+        {
+            if (fadeIn)
+            {
+                return;
+                if (timer < 4f)
+                {
+                    img.color = new Color(1, 1, 1, 1 - timer);
+                    img.fillAmount = 6 - timer;
+                }
+                timer += Time.deltaTime;
+            }
+            ++frameCount;
+        }
     }
 
     /// <summary>

@@ -376,7 +376,7 @@ public class PlayerWithAnim : MonoBehaviour
         if(collision.gameObject.CompareTag("Police")&&animator.runtimeAnimatorController == phase3)
         //フェーズ3で警察の前を通った時
         {
-            fade.StartFadeIn();
+            
             transform.position = new Vector3(100,5,0);
             transform.localScale = new Vector3(0.1f,0.1f,0.1f);
             phaseID =1;
@@ -390,7 +390,7 @@ public class PlayerWithAnim : MonoBehaviour
             jumpPower =0;
             Debug.Log("Police");
             StartCoroutine(ResetSpeedjumpPower());
-
+            fade.StartFadeIn();
             //SceneManager.LoadScene("Police CP");
         }
 
