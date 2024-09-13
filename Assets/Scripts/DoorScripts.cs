@@ -7,7 +7,7 @@ public class DoorScripts : MonoBehaviour
     float defaultY;
     float openY = 5.5f;
     //ドアが開く範囲
-    float speed = 1.2f;
+    float speed = 1.6f;
     //ドアが開くスピード
     public bool isOpen;
 

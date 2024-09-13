@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 738360ade88ef744ba198b7934feef5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countdownMinutes: 5
+  countdownMinutes: 8
 --- !u!114 &4524261301193632257
 MonoBehaviour:
   m_ObjectHideFlags: 0

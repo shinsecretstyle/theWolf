@@ -434,7 +434,7 @@ public class PlayerWithAnim : MonoBehaviour
         //フェーズ3で警察の前を通った時
         {
             
-            transform.position = new Vector3(100,5,0);
+            transform.position = new Vector3(201,0,0);
             transform.localScale = new Vector3(0.1f,0.1f,0.1f);
             phaseID =1;
             phaseProcess =0f;
