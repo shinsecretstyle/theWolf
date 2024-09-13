@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 8440115010368800304}
   - component: {fileID: 4863671349949865492}
   - component: {fileID: 1270158485577059947}
-  - component: {fileID: 530254029100947707}
   - component: {fileID: 8137580052545192465}
+  - component: {fileID: 2976244604506863764}
   m_Layer: 0
   m_Name: Switch 1
   m_TagString: Ground
@@ -209,8 +209,29 @@ PolygonCollider2D:
       - {x: 1.415, y: -2.26}
       - {x: 2.165, y: -2.25}
   m_UseDelaunayMesh: 0
---- !u!58 &530254029100947707
-CircleCollider2D:
+--- !u!95 &8137580052545192465
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1605563788908460652}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6ba7d312789ae234fb18f68c0455e425, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!70 &2976244604506863764
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -241,27 +262,6 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.09367115, y: 1.3177605}
-  serializedVersion: 2
-  m_Radius: 2.0948596
---- !u!95 &8137580052545192465
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1605563788908460652}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6ba7d312789ae234fb18f68c0455e425, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_Offset: {x: -0.08, y: 2.44}
+  m_Size: {x: 3.04, y: 3.55}
+  m_Direction: 0
