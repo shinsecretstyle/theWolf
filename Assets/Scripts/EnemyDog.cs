@@ -21,6 +21,7 @@ public class EnemyDog : MonoBehaviour
         if(Player.isBark)
         {
             animator.SetBool("Bark",true);
+            //吠える
             //Debug.Log("Bark");
         }
         else
@@ -31,6 +32,7 @@ public class EnemyDog : MonoBehaviour
         if(Player.isSleep0)
         {
             animator.SetBool("Sleep0",true);
+            //寝る（音無）
         }
         else
         {
@@ -40,6 +42,7 @@ public class EnemyDog : MonoBehaviour
         if(Player.isSleep)
         {
             animator.SetBool("Sleep",true);
+            //寝る(音有)
         }
         else
         {

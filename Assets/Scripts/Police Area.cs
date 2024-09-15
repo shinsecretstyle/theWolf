@@ -18,6 +18,7 @@ public class PoliceArea : MonoBehaviour
         if(Player.isPoliceArea)
         {
             animator.SetBool("Police Area",true);
+            //警察が警戒態勢に入る
             //Debug.Log("Bark");
         }
         else

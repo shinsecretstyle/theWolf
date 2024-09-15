@@ -28,17 +28,17 @@ public class PlayerWithAnim : MonoBehaviour
     public bool isInLight;
     public bool isOnGround;
     public bool isOnWall;
-    public bool isMirror;
-    public bool InvisibleWall = false;
-    public bool isBark = false;
-    public bool isSleep = false;
+    public bool isMirror; //カーブミラーの光
+    public bool InvisibleWall = false; //番犬に使われている透明な壁
+    public bool isBark = false; //吠えるアニメーション
+    public bool isSleep = false; //寝るアニメーション
     public bool isSleep0;
-    public bool Ladder = false;
-    public bool isCapture = false;
-    public bool isPoliceArea = false;
-    public bool isLayDown = false;
+    public bool Ladder = false; //はしご
+    public bool isCapture = false;//警察に捕まった時
+    public bool isPoliceArea = false; //警察のエリア
+    public bool isLayDown = false; //車の下やしゃがんで通る道でバグを引き起こさないようにしゃがみ状態を維持する
     public bool isPush = false;
-    public bool Dognear;
+    public bool Dognear; //犬が近いとき
     public bool Dogfar;
     float seconds;
 
@@ -76,6 +76,7 @@ public class PlayerWithAnim : MonoBehaviour
         animator.SetFloat("Phase1", 1f);
         GameObject obj1 = GameObject.Find("Player");
         GameObject obj2 = GameObject.Find("Enemy Dog");
+        //obj1,2を決める
         isSleep0 =true;
         //SoundManager.Instance.PlayBGM(BGMSoundData.BGM.BGM);
     }
@@ -90,6 +91,7 @@ public class PlayerWithAnim : MonoBehaviour
         GameObject obj1 = GameObject.Find("Player");
         GameObject obj2 = GameObject.Find("Enemy Dog");
         float distance = Vector3.Distance(obj1.transform.position,obj2.transform.position);
+        //obj1,2の距離を算出
         //Debug.Log("Distance between Object1 and Object2:" + distance);
         
         if (move > 0)//右向け移動
@@ -185,6 +187,7 @@ public class PlayerWithAnim : MonoBehaviour
         }
 
         if(distance<10)
+        //obj1,2の距離が10より小さい
         {
             Debug.Log("10以下");
             Dognear = true;
@@ -192,6 +195,7 @@ public class PlayerWithAnim : MonoBehaviour
             isSleep0 = true;
         }
         else if(distance >10)
+        //10より大きい
         {
             Debug.Log("10以上");
             Dogfar = true;
@@ -201,6 +205,7 @@ public class PlayerWithAnim : MonoBehaviour
         }
 
         if(Dognear && animator.runtimeAnimatorController == phase1)
+        //10より近く、フェーズが1のとき
         {
             Debug.Log("吠える犬アニメーション");
             isBark = true;
@@ -208,6 +213,7 @@ public class PlayerWithAnim : MonoBehaviour
             isSleep = false;
         }
         else if(Dognear && animator.runtimeAnimatorController == phase2)
+        //〃フェーズ２
         {
             Debug.Log("吠える犬アニメーション");
             isBark = true;
@@ -215,6 +221,7 @@ public class PlayerWithAnim : MonoBehaviour
             isSleep = false;
         }
         else if(Dognear && animator.runtimeAnimatorController == phase3)
+        //〃フェーズ3
         {
             Debug.Log("寝る犬アニメーション");
             isSleep = true;
@@ -249,7 +256,7 @@ public class PlayerWithAnim : MonoBehaviour
         {
             phaseProcess = 0f;
             animator.runtimeAnimatorController = phase1;
-            transform.localScale = new Vector3(0.1f,0.1f,0.1f);
+            transform.localScale = new Vector3(0.1f,0.1f,0.1f);//サイズ
             speed = 4;
             rb.mass = 1f;
             canWallJump = false;
@@ -274,7 +281,7 @@ public class PlayerWithAnim : MonoBehaviour
         {
             phaseProcess = 0f;
             animator.runtimeAnimatorController = phase3;
-            transform.localScale = new Vector3(0.13f,0.13f,0.13f);
+            transform.localScale = new Vector3(0.13f,0.13f,0.13f);//フェーズ3では少しデカくしている
             rb.mass = 120f;//massを増加し、車を押すことができる
             canWallJump = false;
             InvisibleWall = true;
@@ -546,7 +553,7 @@ public class PlayerWithAnim : MonoBehaviour
             isPoliceArea = false;
         }
 
-        if(collision.gameObject.CompareTag("Ladder"))
+        if(collision.gameObject.CompareTag("Ladder"))//はしごアニメーション
         {
             animator.SetBool("LadderMove",false);
         }

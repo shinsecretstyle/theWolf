@@ -21,10 +21,12 @@ public class DoorScripts : MonoBehaviour
         if(isOpen && transform.position.y < openY)
         {
             transform.position += Vector3.up * speed * Time.deltaTime;
+            //開く
         }
         else if(!isOpen && transform.position.y > defaultY)
         {
             transform.position -= Vector3.up * speed * Time.deltaTime;
+            //閉じる
         }
     }
 }
