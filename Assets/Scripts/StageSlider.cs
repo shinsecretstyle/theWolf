@@ -7,6 +7,8 @@ public class StageSlider : MonoBehaviour
     public Transform Player;//プレイヤー
     public Transform Goal;//ゴール
     private float maxDistance;//プレイヤーとゴールの最大距離
+ 
+
 
     void Start()
     {
