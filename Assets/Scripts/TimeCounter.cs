@@ -25,7 +25,7 @@ public class TimeCounter : MonoBehaviour
 
         if(countdownSeconds <= 0)
         {
-            SceneManager.LoadScene("Gameover");
+            SceneManager.LoadScene("Timeover");
         }
     }
     

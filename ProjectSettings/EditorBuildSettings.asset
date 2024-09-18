@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/EnemyScene.unity
     guid: 0c25a4a12504f6b41ad69c8e0e9f3d6d
   - enabled: 1
+    path: Assets/Scenes/TimeOver.unity
+    guid: 14839347eed8703438dae447bdf6fd46
+  - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 12ae42aa681af644c9c92c5a2d66c38f
   - enabled: 1
