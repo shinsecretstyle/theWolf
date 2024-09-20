@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class FadeManager : MonoBehaviour
 {
     [Header("最初からフェードインが完了しているかどうか")] public bool firstFadeInComp;
-    [SerializeField] private float _fadeTime;
     private Image img = null;
     private int frameCount = 0;
     private float timer = 0.0f;

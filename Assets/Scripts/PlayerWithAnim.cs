@@ -291,6 +291,7 @@ public class PlayerWithAnim : MonoBehaviour
         }
         else if (id == 4)//phase4
         {
+            fade.StartFadeIn();
             Debug.Log("GameOver");
             SceneManager.LoadScene("Gameover");
             //ゲームオーバー関数を読み込む
@@ -479,6 +480,7 @@ public class PlayerWithAnim : MonoBehaviour
 
         if (collision.tag == "Goal")
         {
+            fade.StartFadeIn();
             SceneManager.LoadScene("New ED");
         }
         if (collision.tag == "Enemy")

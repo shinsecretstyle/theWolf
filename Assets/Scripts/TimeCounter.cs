@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class TimeCounter : MonoBehaviour
 {
+    [Header("FadeManager")] public FadeManager fade;
+
     public int countdownMinutes = 3;
     private float countdownSeconds;
     private Text timeText;
@@ -25,6 +27,7 @@ public class TimeCounter : MonoBehaviour
 
         if(countdownSeconds <= 0)
         {
+            fade.StartFadeIn();
             SceneManager.LoadScene("Timeover");
         }
     }
