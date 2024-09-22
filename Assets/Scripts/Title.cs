@@ -14,6 +14,7 @@ public class Title : MonoBehaviour
     //スタートボタンを押されたら呼ばれる
     public void PressStart()
     {
+        Time.timeScale = 1;
         Debug.Log("Press Start!");
 
 

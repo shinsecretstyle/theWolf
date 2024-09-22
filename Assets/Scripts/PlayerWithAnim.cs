@@ -41,7 +41,7 @@ public class PlayerWithAnim : MonoBehaviour
     public bool Dognear; //犬が近いとき
     public bool Dogfar;
     float seconds;
-
+    
     [Header("FadeManager")] public FadeManager fade;
 
 

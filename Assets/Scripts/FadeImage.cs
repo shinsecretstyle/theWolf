@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class FadeImage : MonoBehaviour
 {
-    [Header("Å‰‚©‚çƒtƒF[ƒhƒCƒ“‚ªŠ®—¹‚µ‚Ä‚¢‚é‚©‚Ç‚¤‚©")] public bool firstFadeInComp;
+    [Header("ï¿½Åï¿½ï¿½ï¿½ï¿½ï¿½tï¿½Fï¿½[ï¿½hï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½é‚©ï¿½Ç‚ï¿½ï¿½ï¿½")] public bool firstFadeInComp;
     private Image img = null;
     private int frameCount = 0;
     private float timer = 0.0f;
@@ -15,12 +15,13 @@ public class FadeImage : MonoBehaviour
     private bool compFadeOut = false;
 
     /// <summary>
-    /// ƒtƒF[ƒhƒCƒ“‚ğŠJn‚·‚é
+    /// ï¿½tï¿½Fï¿½[ï¿½hï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½Jï¿½nï¿½ï¿½ï¿½ï¿½
     /// </summary>
     /// <returns><</returns>
 
     public void StartFadeIn()
     {
+        Time.timeScale = 1;
         if (fadeIn || fadeOut)
         {
             return;
@@ -34,7 +35,7 @@ public class FadeImage : MonoBehaviour
     }
 
     /// <summary>
-    /// ƒtƒF[ƒhƒCƒ“‚ªŠ®—¹‚µ‚½‚©‚Ç‚¤‚©
+    /// ï¿½tï¿½Fï¿½[ï¿½hï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç‚ï¿½ï¿½ï¿½
     /// </summary>
     /// <returns><</returns>
 
@@ -44,7 +45,7 @@ public class FadeImage : MonoBehaviour
     }
 
     /// <summary>
-    /// ƒtƒF[ƒhƒAƒEƒg‚ğŠJn‚·‚é
+    /// ï¿½tï¿½Fï¿½[ï¿½hï¿½Aï¿½Eï¿½gï¿½ï¿½ï¿½Jï¿½nï¿½ï¿½ï¿½ï¿½
     /// </summary>
     /// <returns><</returns>
 
@@ -63,7 +64,7 @@ public class FadeImage : MonoBehaviour
     }
 
     /// <summary>
-    /// ƒtƒF[ƒhƒAƒEƒg‚ğŠ®—¹‚µ‚½‚©‚Ç‚¤‚©
+    /// ï¿½tï¿½Fï¿½[ï¿½hï¿½Aï¿½Eï¿½gï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç‚ï¿½ï¿½ï¿½
     /// </summary>
     /// <returns><</returns>
 
@@ -105,7 +106,7 @@ public class FadeImage : MonoBehaviour
         ++frameCount;
     }
 
-    //ƒtƒF[ƒhƒCƒ“’†
+    //ï¿½tï¿½Fï¿½[ï¿½hï¿½Cï¿½ï¿½ï¿½ï¿½
     private void FadeInUpdate()
     {
         if (timer < 4f)
@@ -120,7 +121,7 @@ public class FadeImage : MonoBehaviour
         timer += Time.deltaTime;
     }
 
-    //ƒtƒF[ƒhƒAƒEƒg’†
+    //ï¿½tï¿½Fï¿½[ï¿½hï¿½Aï¿½Eï¿½gï¿½ï¿½
     private void FadeOutUpdate()
     {
         if (timer < 1f)
@@ -135,7 +136,7 @@ public class FadeImage : MonoBehaviour
         timer += Time.deltaTime;
     }
 
-    //ƒtƒF[ƒhƒCƒ“Š®—¹
+    //ï¿½tï¿½Fï¿½[ï¿½hï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     private void FadeInComplete()
     {
         img.color = new Color(1, 1, 1, 0);
@@ -146,7 +147,7 @@ public class FadeImage : MonoBehaviour
         compFadeIn = true;
     }
 
-    //ƒtƒF[ƒhƒAƒEƒgŠ®—¹
+    //ï¿½tï¿½Fï¿½[ï¿½hï¿½Aï¿½Eï¿½gï¿½ï¿½ï¿½ï¿½
     private void FadeOutComplete()
     {
         img.color = new Color(1, 1, 1, 1);

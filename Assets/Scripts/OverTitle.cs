@@ -6,12 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class OverTitle : MonoBehaviour
 {
-    [Header("ƒtƒF[ƒh")] public FadeImage fade;
+    [Header("ï¿½tï¿½Fï¿½[ï¿½h")] public FadeImage fade;
 
     private bool firstPush = false;
     private bool goNextScene = false;
 
-    //ƒXƒ^[ƒgƒ{ƒ^ƒ“‚ğ‰Ÿ‚³‚ê‚½‚çŒÄ‚Î‚ê‚é
+    //ï¿½Xï¿½^ï¿½[ï¿½gï¿½{ï¿½^ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½ï¿½Ä‚Î‚ï¿½ï¿½
     public void PressStart()
     {
         Debug.Log("Press Start!");
