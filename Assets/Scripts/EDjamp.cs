@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -6,12 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class EDjamp : MonoBehaviour
 {
-    [Header("ƒtƒF[ƒh")] public FadeImage fade;
+    [Header("ãƒ•ã‚§ãƒ¼ãƒ‰")] public FadeImage fade;
 
     private bool firstPush = false;
     private bool goNextScene = false;
 
-    //ƒXƒ^[ƒgƒ{ƒ^ƒ“‚ğ‰Ÿ‚³‚ê‚½‚çŒÄ‚Î‚ê‚é
+    //ã‚¹ã‚¿ãƒ¼ãƒˆãƒœã‚¿ãƒ³ã‚’æŠ¼ã•ã‚ŒãŸã‚‰å‘¼ã°ã‚Œã‚‹
     public void PressStart()
     {
         Debug.Log("Press Start!");

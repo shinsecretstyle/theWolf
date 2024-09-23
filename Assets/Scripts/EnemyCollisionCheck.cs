@@ -1,18 +1,18 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyCollisionCheck : MonoBehaviour
 {
     /// <summary>
-    /// ”»’è“à‚É“G‚©•Ç‚ª‚ ‚é
+    /// åˆ¤å®šå†…ã«æ•µã‹å£ãŒã‚ã‚‹
     /// </summary>
     [HideInInspector] public bool isOn = false;
 
 
     private string enemyTag = "Enemy";
 
-    #region//ÚG”»’è
+    #region//æ¥è§¦åˆ¤å®š
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag ==  enemyTag)

@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -28,10 +28,10 @@ public class SceneController : MonoBehaviour
     }
 
     /// <summary>
-    /// ƒV[ƒ“ˆÚ“®
+    /// ã‚·ãƒ¼ãƒ³ç§»å‹•
     /// </summary>
-    /// <param name="sceneName">ƒV[ƒ“–¼</param>
-    /// <param name="delay">’x‰„ŠÔ</param>
+    /// <param name="sceneName">ã‚·ãƒ¼ãƒ³å</param>
+    /// <param name="delay">é…å»¶æ™‚é–“</param>
     public void LoadScene(string sceneName, float delay)
     {
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
@@ -43,10 +43,10 @@ public class SceneController : MonoBehaviour
     public void LoadScene() => LoadScene(sceneName, delay);
 
     /// <summary>
-    /// ƒV[ƒ“’Ç‰Á
+    /// ã‚·ãƒ¼ãƒ³è¿½åŠ 
     /// </summary>
-    /// <param name="sceneName">ƒV[ƒ“–¼</param>
-    /// <param name="delay">’x‰„ŠÔ</param>
+    /// <param name="sceneName">ã‚·ãƒ¼ãƒ³å</param>
+    /// <param name="delay">é…å»¶æ™‚é–“</param>
     public void LoadAddScene(string sceneName, float delay)
     {
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
@@ -58,10 +58,10 @@ public class SceneController : MonoBehaviour
     public void LoadAddScene() => LoadAddScene(sceneName, delay);
 
     /// <summary>
-    /// ƒV[ƒ“”jŠü
+    /// ã‚·ãƒ¼ãƒ³ç ´æ£„
     /// </summary>
-    /// <param name="sceneName">ƒV[ƒ“–¼</param>
-    /// <param name="delay">’x‰„ŠÔ</param>
+    /// <param name="sceneName">ã‚·ãƒ¼ãƒ³å</param>
+    /// <param name="delay">é…å»¶æ™‚é–“</param>
     public void UnloadScene(string sceneName, float delay)
     {
         AsyncOperation operation = SceneManager.UnloadSceneAsync(sceneName);
@@ -73,10 +73,10 @@ public class SceneController : MonoBehaviour
     public void UnloadScene() => UnloadScene(sceneName, delay);
 
     /// <summary>
-    /// ’x‰„ˆ—
+    /// é…å»¶å‡¦ç†
     /// </summary>
-    /// <param name="second">’x‰„ŠÔ</param>
-    /// <param name="action">ˆ—“à—e</param>
+    /// <param name="second">é…å»¶æ™‚é–“</param>
+    /// <param name="action">å‡¦ç†å†…å®¹</param>
     /// <returns></returns>
     private IEnumerator DelayedCall(float second, Action action)
     {

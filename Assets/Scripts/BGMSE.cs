@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,16 +10,16 @@ public class BGMSE : MonoBehaviour
 
     void Start()
     {
-        //Component‚ğæ“¾
+        //Componentã‚’å–å¾—
         audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
     {
-        // ¶
+        // å·¦
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            //‰¹(sound1)‚ğ–Â‚ç‚·
+            //éŸ³(sound1)ã‚’é³´ã‚‰ã™
             GetComponents<AudioSource>()[0].Play();
         }
         if (Input.GetKeyDown(KeyCode.D))
@@ -28,17 +28,17 @@ public class BGMSE : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            //‰¹(sound3)‚ğ–Â‚ç‚·
+            //éŸ³(sound3)ã‚’é³´ã‚‰ã™
             GetComponents<AudioSource>()[1].Play();
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            //‰¹(sound2)‚ğ–Â‚ç‚·
+            //éŸ³(sound2)ã‚’é³´ã‚‰ã™
             GetComponents<AudioSource>()[0].Play();
         }
         if (Input.GetKey(KeyCode.A))
         {
-            //‰¹(sound2)‚ğ–Â‚ç‚·
+            //éŸ³(sound2)ã‚’é³´ã‚‰ã™
             GetComponents<AudioSource>()[0].Play();
         }
     }

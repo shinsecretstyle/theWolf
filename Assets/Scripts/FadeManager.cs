@@ -1,11 +1,11 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class FadeManager : MonoBehaviour
 {
-    [Header("Å‰‚©‚çƒtƒF[ƒhƒCƒ“‚ªŠ®—¹‚µ‚Ä‚¢‚é‚©‚Ç‚¤‚©")] public bool firstFadeInComp;
+    [Header("æœ€åˆã‹ã‚‰ãƒ•ã‚§ãƒ¼ãƒ‰ã‚¤ãƒ³ãŒå®Œäº†ã—ã¦ã„ã‚‹ã‹ã©ã†ã‹")] public bool firstFadeInComp;
     private Image img = null;
     private int frameCount = 0;
     private float timer = 0.0f;
@@ -15,7 +15,7 @@ public class FadeManager : MonoBehaviour
     private bool compFadeOut = false;
 
     /// <summary>
-    /// ƒtƒF[ƒhƒCƒ“‚ğŠJn‚·‚é
+    /// ãƒ•ã‚§ãƒ¼ãƒ‰ã‚¤ãƒ³ã‚’é–‹å§‹ã™ã‚‹
     /// </summary>
     /// <returns><</returns>
 
@@ -35,7 +35,7 @@ public class FadeManager : MonoBehaviour
     }
 
     /// <summary>
-    /// ƒtƒF[ƒhƒCƒ“‚ªŠ®—¹‚µ‚½‚©‚Ç‚¤‚©
+    /// ãƒ•ã‚§ãƒ¼ãƒ‰ã‚¤ãƒ³ãŒå®Œäº†ã—ãŸã‹ã©ã†ã‹
     /// </summary>
     /// <returns><</returns>
 
@@ -45,7 +45,7 @@ public class FadeManager : MonoBehaviour
     }
 
     /// <summary>
-    /// ƒtƒF[ƒhƒAƒEƒg‚ğŠJn‚·‚é
+    /// ãƒ•ã‚§ãƒ¼ãƒ‰ã‚¢ã‚¦ãƒˆã‚’é–‹å§‹ã™ã‚‹
     /// </summary>
     /// <returns><</returns>
 
@@ -64,7 +64,7 @@ public class FadeManager : MonoBehaviour
     }
 
     /// <summary>
-    /// ƒtƒF[ƒhƒAƒEƒg‚ğŠ®—¹‚µ‚½‚©‚Ç‚¤‚©
+    /// ãƒ•ã‚§ãƒ¼ãƒ‰ã‚¢ã‚¦ãƒˆã‚’å®Œäº†ã—ãŸã‹ã©ã†ã‹
     /// </summary>
     /// <returns><</returns>
 
@@ -106,7 +106,7 @@ public class FadeManager : MonoBehaviour
         ++frameCount;
     }
 
-    //ƒtƒF[ƒhƒCƒ“’†
+    //ãƒ•ã‚§ãƒ¼ãƒ‰ã‚¤ãƒ³ä¸­
     private void FadeInUpdate()
     {
         if (timer < 4f)
@@ -121,7 +121,7 @@ public class FadeManager : MonoBehaviour
         timer += Time.deltaTime;
     }
 
-    //ƒtƒF[ƒhƒAƒEƒg’†
+    //ãƒ•ã‚§ãƒ¼ãƒ‰ã‚¢ã‚¦ãƒˆä¸­
     private void FadeOutUpdate()
     {
         if (timer < 1f)
@@ -136,7 +136,7 @@ public class FadeManager : MonoBehaviour
         timer += Time.deltaTime;
     }
 
-    //ƒtƒF[ƒhƒCƒ“Š®—¹
+    //ãƒ•ã‚§ãƒ¼ãƒ‰ã‚¤ãƒ³å®Œäº†
     private void FadeInComplete()
     {
         img.color = new Color(1, 1, 1, 0);
@@ -147,7 +147,7 @@ public class FadeManager : MonoBehaviour
         compFadeIn = true;
     }
 
-    //ƒtƒF[ƒhƒAƒEƒgŠ®—¹
+    //ãƒ•ã‚§ãƒ¼ãƒ‰ã‚¢ã‚¦ãƒˆå®Œäº†
     private void FadeOutComplete()
     {
         img.color = new Color(1, 1, 1, 1);

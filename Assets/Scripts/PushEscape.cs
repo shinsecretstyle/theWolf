@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,7 +7,7 @@ public class PushEscape : MonoBehaviour
 
     private bool firstPush = false;
 
-    //ƒQ[ƒ€I—¹
+    //ã‚²ãƒ¼ãƒ çµ‚äº†
     public void EndGame()
     {
         if (!firstPush)
@@ -16,9 +16,9 @@ public class PushEscape : MonoBehaviour
             firstPush = true;
 
 #if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;//ƒQ[ƒ€ƒvƒŒƒCI—¹
+            UnityEditor.EditorApplication.isPlaying = false;//ã‚²ãƒ¼ãƒ ãƒ—ãƒ¬ã‚¤çµ‚äº†
 #else
-            Application.Quit();//ƒQ[ƒ€ƒvƒŒƒCI—¹
+            Application.Quit();//ã‚²ãƒ¼ãƒ ãƒ—ãƒ¬ã‚¤çµ‚äº†
 #endif
         }
 

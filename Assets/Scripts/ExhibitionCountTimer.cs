@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
@@ -6,30 +6,30 @@ using UnityEngine;
 public class ExhibitionCountTimer : MonoBehaviour
 {
 
-    //ƒŠƒZƒbƒg—p‚Ìƒ^ƒCƒ€ƒJƒEƒ“ƒg
+    //ãƒªã‚»ãƒƒãƒˆç”¨ã®ã‚¿ã‚¤ãƒ ã‚«ã‚¦ãƒ³ãƒˆ
     private float step_time;
 
     void Start()
     {
-        //ŠÔ‚Ì‰Šú‰»
+        //æ™‚é–“ã®åˆæœŸåŒ–
         step_time = 0.0f;
     }
 
     void Update()
     {
-        //Œo‰ßŠÔ‚ÌƒJƒEƒ“ƒg
+        //çµŒéæ™‚é–“ã®ã‚«ã‚¦ãƒ³ãƒˆ
         step_time += Time.deltaTime;
 
         var horizontal = Input.GetAxis("Horizontal");
         var Vertical = Input.GetAxisRaw("Vertical");
 
-        //2•ªŠÔ‘€ì‚µ‚È‚©‚Á‚½ê‡‚ÍƒŠƒZƒbƒgˆ—‚ğÀs‚·‚é
+        //2åˆ†é–“æ“ä½œã—ãªã‹ã£ãŸå ´åˆã¯ãƒªã‚»ãƒƒãƒˆå‡¦ç†ã‚’å®Ÿè¡Œã™ã‚‹
         if (step_time > 180.0f)
         {
             ResetGame();
         }
 
-        //ƒWƒƒƒ“ƒvƒ{ƒ^ƒ“‚Ì“ü—Í
+        //ã‚¸ãƒ£ãƒ³ãƒ—ãƒœã‚¿ãƒ³ã®å…¥åŠ›
         if (Input.GetButtonDown("Jump"))
         {
             //Debug.Log("jump");
@@ -41,7 +41,7 @@ public class ExhibitionCountTimer : MonoBehaviour
             step_time = 0.0f;
         }
 
-        //¶‰EˆÚ“®‚Ì“ü—Í
+        //å·¦å³ç§»å‹•ã®å…¥åŠ›
         if (horizontal < 0 | horizontal > 0)
         {
             //Debug.Log("horizontal");
@@ -55,7 +55,7 @@ public class ExhibitionCountTimer : MonoBehaviour
         }
     }
 
-    //ƒŠƒZƒbƒgˆ—
+    //ãƒªã‚»ãƒƒãƒˆå‡¦ç†
     void ResetGame()
     {
         SceneManager.LoadScene("Title2");

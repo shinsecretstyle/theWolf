@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class Escape : MonoBehaviour
 {
@@ -7,17 +7,17 @@ public class Escape : MonoBehaviour
         EndGame();
     }
 
-    //ƒQ[ƒ€I—¹
+    //ã‚²ãƒ¼ãƒ çµ‚äº†
     private void EndGame()
     {
-        //Esc‚ª‰Ÿ‚³‚ê‚½
+        //EscãŒæŠ¼ã•ã‚ŒãŸæ™‚
         if (Input.GetKey(KeyCode.Escape))
         {
 
 #if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;//ƒQ[ƒ€ƒvƒŒƒCI—¹
+            UnityEditor.EditorApplication.isPlaying = false;//ã‚²ãƒ¼ãƒ ãƒ—ãƒ¬ã‚¤çµ‚äº†
 #else
-            Application.Quit();//ƒQ[ƒ€ƒvƒŒƒCI—¹
+            Application.Quit();//ã‚²ãƒ¼ãƒ ãƒ—ãƒ¬ã‚¤çµ‚äº†
 #endif
         }
 

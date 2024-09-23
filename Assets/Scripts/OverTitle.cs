@@ -1,8 +1,9 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//文字化け直す必要
 
 public class OverTitle : MonoBehaviour
 {

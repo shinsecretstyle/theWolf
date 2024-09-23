@@ -1,17 +1,17 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    #region//ƒCƒ“ƒXƒyƒNƒ^[‚Åİ’è‚·‚é
-    [Header("ˆÚ“®‘¬“x")] public float speed;
-    [Header("d—Í")] public float gravity;
-    [Header("‰æ–ÊŠO‚Å‚às“®‚·‚é")] public bool nonVisibleAct;
-    [Header("ÚG”»’è")] public EnemyCollisionCheck checkCollision;
+    #region//ã‚¤ãƒ³ã‚¹ãƒšã‚¯ã‚¿ãƒ¼ã§è¨­å®šã™ã‚‹
+    [Header("ç§»å‹•é€Ÿåº¦")] public float speed;
+    [Header("é‡åŠ›")] public float gravity;
+    [Header("ç”»é¢å¤–ã§ã‚‚è¡Œå‹•ã™ã‚‹")] public bool nonVisibleAct;
+    [Header("æ¥è§¦åˆ¤å®š")] public EnemyCollisionCheck checkCollision;
     #endregion
 
-    #region//ƒvƒ‰ƒCƒx[ƒg•Ï”
+    #region//ãƒ—ãƒ©ã‚¤ãƒ™ãƒ¼ãƒˆå¤‰æ•°
     private Rigidbody2D rb = null;
     private SpriteRenderer sr = null;
     private bool rightTleftF = false;

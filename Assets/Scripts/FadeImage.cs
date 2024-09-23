@@ -1,7 +1,10 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
+
+//文字化け直す必要ある
 
 public class FadeImage : MonoBehaviour
 {

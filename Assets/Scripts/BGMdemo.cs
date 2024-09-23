@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//文字化け直す必要ある
+
 public class NewBehaciourScript : MonoBehaviour
 {
 

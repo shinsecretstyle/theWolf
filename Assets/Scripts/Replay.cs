@@ -1,5 +1,7 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+
+//文字化け直す必要
 
 public class Replay : MonoBehaviour
 {

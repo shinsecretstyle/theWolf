@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,9 +10,9 @@ public class ExitGame : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
 
-            #if UNITY_EDITOR // ƒGƒfƒBƒ^[‚É
+            #if UNITY_EDITOR // ã‚¨ãƒ‡ã‚£ã‚¿ãƒ¼ã«
                 UnityEditor.EditorApplication.isPlaying = false;
-            #else //ƒrƒ‹ƒh‚µ‚½ƒf[ƒ^‚É
+            #else //ãƒ“ãƒ«ãƒ‰ã—ãŸãƒ‡ãƒ¼ã‚¿ã«
                 Application.Quit();
             #endif
         }
