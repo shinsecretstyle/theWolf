@@ -5,8 +5,8 @@ public class Replay : MonoBehaviour
 {
     public void replay()
     {
-            // LoadScene‚Ìˆø”‚ÉƒV[ƒ“‚Ì–¼‘O‚ğ“ü‚ê‚Ä“Ç‚İ‚Ş
-            SceneManager.LoadScene("WolfMap2(ƒAƒjƒ[ƒVƒ‡ƒ“‚ ‚è)");
+            // LoadSceneï¿½Ìˆï¿½ï¿½ï¿½ï¿½ÉƒVï¿½[ï¿½ï¿½ï¿½Ì–ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½Ä“Ç‚İï¿½ï¿½ï¿½
+            SceneManager.LoadScene("WolfMap2(ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã‚ã‚Š)");
     }
             
 }
