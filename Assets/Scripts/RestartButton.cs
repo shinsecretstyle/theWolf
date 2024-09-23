@@ -13,8 +13,8 @@ public class RestartButton : MonoBehaviour
     void Start()
     {
         button.SetActive(false);
-        movie2.SetActive(false);
         movie.SetActive(true);
+        movie2.SetActive(false);  
     }
 
     void Update()
@@ -26,8 +26,8 @@ public class RestartButton : MonoBehaviour
         else
         {
             button.SetActive(true);
-            movie2.SetActive(true);
             movie.SetActive(false);
+            movie2.SetActive(true);
         }
         Debug.Log(time);
     }
