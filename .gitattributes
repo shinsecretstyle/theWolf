@@ -1,0 +1,4 @@
+#スクリプト文字コード定義
+*.cs text working-tree-encoding=UTF-8
+#テキスト文字コード定義
+*.txt text working-tree-encoding=UTF-8
