@@ -41,6 +41,7 @@ public class PlayerWithAnim : MonoBehaviour
     public bool Dognear; //犬が近いとき
     public bool Dogfar;
     float seconds;
+    public bool isCrouch;
     
     [Header("FadeManager")] public FadeManager fade;
 
@@ -121,7 +122,7 @@ public class PlayerWithAnim : MonoBehaviour
 
         //JumpEvent();
 
-        if (Input.GetButton("Jump") && canJump)
+        if (Input.GetButton("Jump") && canJump &&!isCrouch)
         {
             //StartCoroutine(resetGroundChecker());
             canJump = false;
@@ -147,20 +148,24 @@ public class PlayerWithAnim : MonoBehaviour
         //しゃがみアニメーション
         {
             animator.SetBool("LayDown",true);
+            isCrouch = true;
         }
         if(Input.GetKeyUp(KeyCode.LeftShift))
         {
 
             animator.SetBool("LayDown",false);
+            isCrouch = false;
         }
 
         if(Input.GetKeyDown(KeyCode.LeftShift)&&!isLayDown)
         {
             animator.SetBool("Crouch",true);
+            isCrouch = true;
         }
         if(Input.GetKeyUp(KeyCode.LeftShift)&&!isLayDown)
         {
             animator.SetBool("Crouch",false);
+            isCrouch = false;
         }
         if(Input.GetKey(KeyCode.W))
         {
@@ -512,6 +517,7 @@ public class PlayerWithAnim : MonoBehaviour
         {
             animator.SetBool("LayDown",true);
             isLayDown = true;
+            isCrouch = true;
             //animator.SetBool("Crouch",false);
         }
 
@@ -542,7 +548,7 @@ public class PlayerWithAnim : MonoBehaviour
         {
             animator.SetBool("LayDown",false);
             animator.SetBool("Crouch",false);
-
+            isCrouch = false;
             isLayDown = false;
         }
 
