@@ -459,26 +459,6 @@ public class PlayerWithAnim : MonoBehaviour
             //animator.SetBool("LadderMove",true);
         }
 
-        if(collision.gameObject.CompareTag("Police")&&animator.runtimeAnimatorController == phase3)
-        //フェーズ3で警察の前を通った時
-        {
-            
-            transform.position = new Vector3(201,0,0);
-            transform.localScale = new Vector3(0.1f,0.1f,0.1f);
-            phaseID =1;
-            phaseProcess =0f;
-            animator.runtimeAnimatorController = phase1;
-            speed =0;
-            rb.mass =1f;
-            canWallJump =false;
-            InvisibleWall =false;
-            isPush = false;
-            jumpPower =0;
-            Debug.Log("Police");
-            StartCoroutine(ResetSpeedjumpPower());
-            fade.StartFadeIn();
-            //SceneManager.LoadScene("Police CP");
-        }
 
         if(collision.gameObject.CompareTag("Dog")&&animator.runtimeAnimatorController == phase1)
         //番犬アニメーション
@@ -511,16 +491,6 @@ public class PlayerWithAnim : MonoBehaviour
         }
     }
 
-    IEnumerator ResetSpeedjumpPower()
-    //警察に捕まった後の動作
-    {
-        animator.SetBool("isCapture",true);
-        yield return new WaitForSeconds(5f);//五秒後
-        animator.SetBool("isCapture",false);
-        speed=4;
-        jumpPower=35;
-    }
-
     private void OnTriggerStay2D(Collider2D collision)
     {
          if(collision.gameObject.CompareTag("Ladder"))
@@ -550,6 +520,38 @@ public class PlayerWithAnim : MonoBehaviour
         {
             isPoliceArea = true;
         }
+
+        if(collision.gameObject.CompareTag("Police")&&animator.runtimeAnimatorController == phase3)
+        //フェーズ3で警察の前を通った時
+        {
+            
+            transform.position = new Vector3(201,0,0);
+            transform.localScale = new Vector3(0.1f,0.1f,0.1f);
+            phaseID =1;
+            phaseProcess =0f;
+            animator.runtimeAnimatorController = phase1;
+            speed =0;
+            rb.mass =1f;
+            canWallJump =false;
+            InvisibleWall =false;
+            isPush = false;
+            jumpPower =0;
+            Debug.Log("Police");
+            StartCoroutine(ResetSpeedjumpPower());
+            fade.StartFadeIn();
+            //SceneManager.LoadScene("Police CP");
+        }
+
+
+    IEnumerator ResetSpeedjumpPower()
+    //警察に捕まった後の動作
+    {
+        animator.SetBool("isCapture",true);
+        yield return new WaitForSeconds(5f);//五秒後
+        animator.SetBool("isCapture",false);
+        speed=4;
+        jumpPower=35;
+    }
 
     }
 
