@@ -183,6 +183,22 @@ public class PlayerWithAnim : MonoBehaviour
         {
             animator.SetBool("Ladder",false);
         }
+        if(Input.GetKey(KeyCode.UpArrow))
+        {
+            animator.SetBool("Ladder",true);
+        }
+        if(Input.GetKeyUp(KeyCode.UpArrow))
+        {
+            animator.SetBool("Ladder",false);
+        }
+        if(Input.GetKey(KeyCode.DownArrow))
+        {
+            animator.SetBool("Ladder",true);
+        }
+        if(Input.GetKeyUp(KeyCode.DownArrow))
+        {
+            animator.SetBool("Ladder",false);
+        }
 
         inTheLight();
 
